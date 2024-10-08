@@ -15,7 +15,7 @@ Da questo schema, notiamo che:
 - La fase di Codifica e di Decodifica fanno riferimento alla seconda parte del corso, chiamata <code>Teoria della Trasmissione</code>
 - Il Rumore sarà un'entità esterna di cui terremo conto nell'utilizzo del Canale, ma che non approfondiremo troppo in questo corso.
 
-## Protagonisti della storia della Teoria dell'Informazione
+### Protagonisti della storia della Teoria dell'Informazione
 
 Ci si pone l'obbiettivo di spedire, attraverso un canale, più informazione possibile da una sorgente a una destinazione.<br>
 Gli studiosi che si sono posti il problema sono <b>Claude Shannon</b> e <b>Andrej Kolmogorov</b>.<br>
@@ -30,7 +30,7 @@ Per inviare un messaggio, sono importanti due operazioni:
 Studieremo i due teoremi di Shannon, in due punti diversi dello schema soprastante:
 
 - 1° Teorema di Shannon, fase di Source Coding: si cerca di massimizzare la compressione
-- 2° Teorema di Shannon, fase di uso del Canale: si cerca di minimizzare il numero di errori
+- 2° Teorema di Shannon, fase di Codifica e di uso del Canale: si cerca di minimizzare il numero di errori
 
 Shannon, per modellare il canale, usa una matrice stocastica che indica la probabilità di ricevere un determinato carattere dopo averne inviato un altro sul canale.
 
