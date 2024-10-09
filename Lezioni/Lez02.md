@@ -104,9 +104,16 @@ Sia $c: X\to D^+$ e $C:X^+\to D^+$ la sua estensione.<br>
 Se $c$ non è univocamente decodificabile, allora $\exists x, x'\in X^+, x\ne x':C(x)=C(x')$.<br>
 Possono esistere due casi:<br>
 
-1. $x'$ è prefisso di $x$. Per far sì che le due codifiche siano uguali, la parte che "eccede" $x'$ in $x$ deve essere codificata nella parola vuota $\empty$. Questo è assurdo, perché $C:X^+\to D^+$ e $\empty$ non fa parte del codominio. In ogni caso, se anche considerassimo un'ulteriore estensione di $\hat C:X^+\to D^*$ che comprende anche la parola vuota nel codominio, tale parola sarebbe prefissa di ogni altra e questo renderebbe il codice non istantaneo.
-2. $x$ e $x'$ condividono una parte comune, salvo differire nella parte finale. La parte comune avrà chiaramente la stessa codifica, dunque ci concentriamo sulla parte non comune.<br>
+1. 
+![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/caso1.jpeg)<br>
+$x'$ è prefisso di $x$. Per far sì che le due codifiche siano uguali, la parte che "eccede" $x'$ in $x$ deve essere codificata nella parola vuota $\empty$. Questo è assurdo, perché $C:X^+\to D^+$ e $\empty$ non fa parte del codominio. In ogni caso, se anche considerassimo un'ulteriore estensione di $\hat C:X^+\to D^*$ che comprende anche la parola vuota nel codominio, tale parola sarebbe prefissa di ogni altra e questo renderebbe il codice non istantaneo.
+
+2. 
+![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/caso2.jpeg)<br>
+$x$ e $x'$ condividono una parte comune, salvo differire nella parte finale. La parte comune avrà chiaramente la stessa codifica, dunque ci concentriamo sulla parte non comune.<br>
 Supponiamo per semplicità che la parte non comune sia formata da due caratteri ciascuna. La loro codifica totale sarà la stessa, ma dal disegno si può vedere come la codifica di "$C$" sia prefisso della codifica di "$A$", rendendo il codice non istantaneo.
+
+![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/codifica.jpeg)
 
 ### Esercizio
 $GF(4)=GF(2^2)$. Il campo di Galois è $\Z_2[x] \mod x^2+x+1$<br>
