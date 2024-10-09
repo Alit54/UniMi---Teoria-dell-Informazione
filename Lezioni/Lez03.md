@@ -73,7 +73,7 @@ Possiamo costruire un albero di codifica in modo tale che il codice che rapprese
 ### Codici di Shannon
 In seguito a tutto il discorso detto, abbiamo scoperto come i codici istantanei siano migliori di quelli univocamente decodificabili, che sono migliori dei non singolari.
 
-# Inserire immagine Generale codici
+![Albero di Codifica](/img/sottoinsiemi/Gerarchia.jpeg)
 
 Tuttavia, restringere l'insieme dei codici possibili comporta un innalzamento del minimo che noi stiamo cercando. Ricordiamo infatti, che noi vogliamo minimizzare il valore atteso delle lunghezze delle codifiche.<br>
 L'idea di Shannon è di minimizzare il valore atteso delle lunghezze avendo però un codice che rispetta la disuguaglianza di Kraft.
@@ -90,3 +90,54 @@ $$l_i \ge \log_d{\frac1{p_i}}$$
 Scegliamo cioè le lunghezze della codifica in base alla probabilità con cui un elemento del messaggio è presente nella sorgente.<br>
 Dato che voglio minimizzare il valore atteso, sceglierò il più piccolo $l_i$ possibile, ovvero
 $$l_i = \lceil\log_d\frac1{p_i}\rceil$$
+Se $l_i = \log_d\displaystyle\frac1{p_i}\quad\forall i$, cioè senza approssimare, allora si ha che:
+$$\Bbb{E}(l_c) = \displaystyle\sum_{i=1}^ml_ip_i=\sum_{i=1}^mp_i*\log_d{\frac1{p_i}} = H$$
+chiamiamo questo valore <font color=red>Entropia</font>.
+### Esercizi
+1. Costruiamo un codice per la sorgente $X=\{x_1, x_2, x_3, x_4\}$ con $d=2$ e $P=\{\displaystyle\frac12,\frac14,\frac18,\frac18\}$<br>
+Seguendo la disuguaglianza di Kraft, scegliamo:<br>
+$
+l_1=\lceil\log_22\rceil=1\\
+l_2=\lceil\log_24\rceil=2\\
+l_3=\lceil\log_28\rceil=3\\
+l_4=\lceil\log_28\rceil=3\\
+$
+Assegniamo ai vari $x_i$ la loro codifica.<br>
+$
+c(x_1) = 0\\
+c(x_2) = 10\\
+c(x_3) = 110\\
+c(x_4) = 111
+$ 
+
+2. Supponiamo di avere una sorgente di due simboli tali per cui $p(x_1)=0.1$ e $p(x_2) = 0.9$. Se dovessimo seguire Shannon, avremmo:<br>
+$
+l_1 = \lceil\log_210\rceil=4\\
+l_2 = \lceil\log_2\displaystyle\frac1{0.9}\rceil=1
+$<br>
+Dunque avremmo $c(x_1) = 0000$ e $c(x_2) = 1$ che non è ottimale.
+
+3. $m = 4$<br>
+$c:1,011,01,111$<br>
+Com'è questo codice?<br>
+Non è istantaneo (perché $01$ è prefisso di $011$, ad esempio)<br>
+Non è univocamente decodificabile (perché la stringa $111$, ad esempio, è ambigua)
+
+4. $m = 5$<br>
+$c:1,001,0000,01, 0001$<br>
+Com'è questo codice?<br>
+Questo è un codice a virgola con carattere terminatore $1$, dunque è istantaneo.
+
+5. $m = 5$<br>
+$c:000, 001, 01, 111, 110$<br>
+Com'è questo codice?<br>
+Costruendo l'albero di codifica, si nota che tutti i sottoalberi generati dagli $x_i$ sono disgiunti tra loro. Questo rende il codice istantaneo. Tuttavia, dato che non tutte le foglie sono coperte da un nodo $x_i$, il codice non è ottimale.
+
+6. $S = \{s_1, s_2, s_3, s_4, s_5, s_6\}, d=2$<br>
+$P=\{\displaystyle\frac1{15}, \frac13, \frac16, \frac19, \frac15, \frac1{29}\}$<br>
+Trovare il codice di Shannon-Fano.<br>
+Questo problema è risolvibile, ma è privo di senso. La somma delle probabilità all'interno di $P$ non è uguale a $1$.
+
+7. $d=2$<br>
+$P=\{\displaystyle\frac1{12}, \frac4{12}, \frac2{10}, \frac13, \frac1{72}, x\}$<br>
+Trovare il codice di Shannon-Fano.<br>
