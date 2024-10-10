@@ -141,3 +141,25 @@ Questo problema è risolvibile, ma è privo di senso. La somma delle probabilit�
 7. $d=2$<br>
 $P=\{\displaystyle\frac1{12}, \frac4{12}, \frac2{10}, \frac13, \frac1{72}, x\}$<br>
 Trovare il codice di Shannon-Fano.<br>
+Innanzitutto, bisogna trovare $x$. Rispettando il secondo assioma di Kolmogorov, la somma delle probabilità deve essere $1$. Dunque $x = \displaystyle1-\frac1{12} - \frac4{12} - \frac2{10} - \frac13 - \frac1{72} = \frac{13}{360}$<br>
+Avendo tutte le probabilità, usiamo il metodo di Shannon per calcolare le lunghezze.<br>
+$
+l_1 = \lceil\log_212\rceil=4\\
+l_2 = \lceil\log_23\rceil=2\\
+l_3 = \lceil\log_25\rceil=3\\
+l_4 = \lceil\log_23\rceil=2\\
+l_5 = \lceil\log_272\rceil=7\\
+l_6 = \lceil\log_2\displaystyle\frac{360}{13}\rceil=5
+$<br>
+Verifichiamo che può esistere un codice istantaneo (ovvero, che rispetta la disuguaglianza di Kraft).<br>
+$\displaystyle\frac1{2^4} + \frac1{2^2} + \frac1{2^3} + \frac1{2^2} + \frac1{2^7} + \frac1{2^5} = \frac1{16}+ \frac14 + \frac18 + \frac14 + \frac1{128} + \frac1{32} = \frac{93}{128}\le 1$<br>
+Possiamo costruire un codice istantaneo.<br>
+Lo facciamo ordinando gli $l_i$ in ordine crescente.<br>
+$
+l_2 = 2 \implies c(x_2) = 00\\
+l_4 = 2 \implies c(x_4) = 01\\
+l_3 = 3 \implies c(x_3) = 100\\
+l_1 = 4 \implies c(x_1) = 1010\\
+l_6 = 5 \implies c(x_6) = 10110\\
+l_5 = 7 \implies c(x_7) = 1011100\\
+$ 
