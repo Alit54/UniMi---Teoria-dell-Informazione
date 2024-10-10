@@ -45,7 +45,7 @@ $$\displaystyle\Bbb{E}(l_c)=\sum_{x\in X}l_c(x)p(x)\text{ sia minimo}$$
 ### Codice Non Singolare
 Dato $c:X\to D^+$, diciamo che $c$ è non singolare se $c$ è una funzione iniettiva.
 $$c(x_1) = c(x_2)\implies x_1 = x_2$$
-Codici non singolari $\subset$ Codici
+Codici non singolari $\subset$ Codici<br>
 ![I Codici non singolari sono un sottoinsieme dei Codici](/img/sottoinsiemi/NS.jpeg)
 
 ### Definizione
@@ -65,8 +65,8 @@ $$C \text{ non singolare}\implies c\text{ univocamente decodificabile}$$
 
 Come si capisce se un codice è univocamente decodificabile? Esiste un algoritmo (Sardinas-Patterson) che ermette di stabilirlo.<br>
 La Complessità Computazionale di questo algoritmo è $O(m*L)$ dove $m=|X|$ e $L=\displaystyle\sum_{x\in X}l_c(x)$<br>
-Codice Univocamente Decodificabile $\subset$ Codice Non Singolare
-![I Codici non singolari sono un sottoinsieme dei Codici](/img/sottoinsiemi/UD.jpeg)
+Codice Univocamente Decodificabile $\subset$ Codice Non Singolare<br>
+![I Codici Univocamente Decodificabili sono un sottoinsieme dei Codici non singolari](/img/sottoinsiemi/UD.jpeg)
 
 > Esempio<br>
 Consideriamo $c(\heartsuit)=10\quad c(\diamondsuit)=00\quad c(\clubsuit)=11\quad c(\spadesuit)=110$<br>
@@ -75,8 +75,9 @@ Questo codice è univocamente decodificabile. Tuttavia, se dobbiamo decodificare
 Un codice è istantaneo quando non esiste una parola nell'insieme $D$ dei simboli che è prefisso di un'altra parola.<br>
 Definiamo provvisariamente l'insieme $\Bbb{C}$ come l'insieme delle codifiche della funzione $c$.<br>$\Bbb{C}\subseteq D^+$
 $$\displaystyle\nexists\ x,y\in\Bbb{C},z\in D^+: y=x*z\implies c \text{ è istantaneo}$$
-dove $x*z$ rappresenta la concatenazione di $x$ e $z$.
-![I Codici non singolari sono un sottoinsieme dei Codici](/img/sottoinsiemi/Istantanei.jpeg)
+dove $x*z$ rappresenta la concatenazione di $x$ e $z$.<br>
+Codici Istantanei $\subset$ Codice Univocamente Decodificabile<br>
+![I Codici Istantanei sono un sottoinsieme dei Codici Univocamente Decodificabili](/img/sottoinsiemi/Istantanei.jpeg)
 
 ### Codici a Virgola
 Tra i codici istantanei, esistono i codici a virgola, dove ogni codifica termina con un carattere terminatore.
@@ -105,15 +106,15 @@ Se $c$ non è univocamente decodificabile, allora $\exists x, x'\in X^+, x\ne x'
 Possono esistere due casi:<br>
 
 1. 
-![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/caso1.jpeg)<br>
+![x prefisso di x'](/img/ISTtoUD/caso1.jpeg)<br>
 $x'$ è prefisso di $x$. Per far sì che le due codifiche siano uguali, la parte che "eccede" $x'$ in $x$ deve essere codificata nella parola vuota $\empty$. Questo è assurdo, perché $C:X^+\to D^+$ e $\empty$ non fa parte del codominio. In ogni caso, se anche considerassimo un'ulteriore estensione di $\hat C:X^+\to D^*$ che comprende anche la parola vuota nel codominio, tale parola sarebbe prefissa di ogni altra e questo renderebbe il codice non istantaneo.
 
 2. 
-![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/caso2.jpeg)<br>
+![Prefisso comune](/img/ISTtoUD/caso2.jpeg)<br>
 $x$ e $x'$ condividono una parte comune, salvo differire nella parte finale. La parte comune avrà chiaramente la stessa codifica, dunque ci concentriamo sulla parte non comune.<br>
 Supponiamo per semplicità che la parte non comune sia formata da due caratteri ciascuna. La loro codifica totale sarà la stessa, ma dal disegno si può vedere come la codifica di "$C$" sia prefisso della codifica di "$A$", rendendo il codice non istantaneo.
 
-![I Codici non singolari sono un sottoinsieme dei Codici](/img/ist=>UD/codifica.jpeg)
+![C prefisso di A](/img/ISTtoUD/codifica.jpeg)
 
 ### Esercizio
 $GF(4)=GF(2^2)$. Il campo di Galois è $\Z_2[x] \mod x^2+x+1$<br>
@@ -132,4 +133,3 @@ Effettuiamo la Pre-Computazione del campo sia per l'operazione $+$ sia per l'ope
 | 1 | 0 | 1 | x | x+1
 | x | 0 | x | x+1 | 1
 | x+1 | 0 | x+1 | 1 | x
-
