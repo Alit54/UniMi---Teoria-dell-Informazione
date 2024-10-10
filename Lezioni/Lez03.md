@@ -68,7 +68,7 @@ $\boxed{\impliedby}$
 Sempre per costruzione, partiamo dal vettore $l = (2, 1, 3, 3)$<br>
 Controlliamo la sommatoria per vedere se rispettiamo le ipotesi della disuguaglianza. <br>
 $\displaystyle\sum_{i=1}^md^{-l_i} = \frac{1}{2^2} + \frac{1}{2^1} + \frac{1}{2^3} + \frac{1}{2^3} = \frac14 + \frac12 + \frac18 + \frac18 = 1\le 1$<br>
-Possiamo costruire un albero di codifica in modo tale che il codice che rappresenta sia istantaneo. Dato che si riesce a costruirlo, $\exists c$ codice istantaneo. $\square$
+Possiamo costruire un albero di codifica in modo tale che il codice che rappresenta sia istantaneo (Ad esempio quello usato per la prima parte della dimostrazione). Dato che si riesce a costruirlo, $\exists c$ codice istantaneo. $\square$
 
 ### Codici di Shannon
 In seguito a tutto il discorso detto, abbiamo scoperto come i codici istantanei siano migliori di quelli univocamente decodificabili, che sono migliori dei non singolari.
@@ -131,7 +131,8 @@ Questo è un codice a virgola con carattere terminatore $1$, dunque è istantane
 5. $m = 5$<br>
 $c:000, 001, 01, 111, 110$<br>
 Com'è questo codice?<br>
-Costruendo l'albero di codifica, si nota che tutti i sottoalberi generati dagli $x_i$ sono disgiunti tra loro. Questo rende il codice istantaneo. Tuttavia, dato che non tutte le foglie sono coperte da un nodo $x_i$, il codice non è ottimale.
+Costruendo l'albero di codifica, si nota che tutti i sottoalberi generati dagli $x_i$ sono disgiunti tra loro. Questo rende il codice istantaneo. Tuttavia, dato che non tutte le foglie sono coperte da un nodo $x_i$, il codice non è ottimale.<br>
+![Albero di Codifica](/img/kraft/Esercizio2.PNG)
 
 6. $S = \{s_1, s_2, s_3, s_4, s_5, s_6\}, d=2$<br>
 $P=\{\displaystyle\frac1{15}, \frac13, \frac16, \frac19, \frac15, \frac1{29}\}$<br>
@@ -161,5 +162,6 @@ l_4 = 2 \implies c(x_4) = 01\\
 l_3 = 3 \implies c(x_3) = 100\\
 l_1 = 4 \implies c(x_1) = 1010\\
 l_6 = 5 \implies c(x_6) = 10110\\
-l_5 = 7 \implies c(x_7) = 1011100\\
-$ 
+l_5 = 7 \implies c(x_5) = 1011100
+$ <br>
+![Albero di Codifica](/img/kraft/Esercizio.PNG)
