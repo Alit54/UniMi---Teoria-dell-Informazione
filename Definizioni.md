@@ -8,6 +8,8 @@ Indice delle definizioni
     - [Codice Istantaneo]()
     - [Codice a Virgola]()
     - [Codici di Shannon]()
+- [Entropia]()
+    - [Entropia Relativa]()
 - [Radice Primitiva]()
 - [Sorgente]()
 
@@ -56,6 +58,15 @@ $$\begin{cases}\displaystyle
 \end{cases}$$
 Dato che voglio minimizzare il valore atteso, sceglierò il più piccolo $l_i$ possibile, ovvero
 $$l_i = \lceil\log_d\frac1{p_i}\rceil$$
+
+### Entropia
+Sia una sorgente $<\Bbb{X}, P>$ con $\Bbb{X}=\{x_1,\dots,x_m\}$ e $P=\{p_1,\dots,p_m\}$. Per comodità, indichiamo con $p_i$ la probabilità con cui $x_i$ compare nel messaggio.<br>
+Sia $X:\Bbb{X}\to\{a_1,\dots,a_m\}\subseteq\R$ una variabile aleatoria tale per cui $\Bbb{P}(X=a_i)=p_i$<br>
+Chiamiamo <font color=red>Entropia</font> la funzione $$H_d(X)=\displaystyle\sum_{i=1}^mp_i\log_d{\frac1{p_i}}$$
+
+### Entropia Relativa
+L'entropia relativa è una misura di distanza (non simmetrica!) tra due variabili aleatorie $X$ e $Y$ entrambe definite sul dominio $S$ ma con due funzioni di probabilità diverse, che chiamiamo $p_X$ e $p_Y$.<br>
+$$D_d(X||Y) = \displaystyle\sum_{s\in S}p_X(s)\log_d\frac{p_X(s)}{p_Y(s)}$$
 
 ### Radice Primitiva
 In un campo, un elemento si dice <font color=red>Radice Primitiva</font> se quel numero elevato per tutti gli elementi del campo genera tutti gli elementi del campo, eccetto lo $0$.
