@@ -111,9 +111,10 @@ Si parte indicando con $S_1$ le parole del codice. Poi, si procede con due fasi:
 2. Si prendono tutti gli $x\in S_i:xy\in S_1$ e si mettono gli $y$ in $S_{i+1}$
 
 Al primo passaggio, $i=1$ dunque i due insiemi coincideranno.<br>
-L'algoritmo termina in due casi:<br>
+L'algoritmo termina in tre casi:<br>
 1. Uno degli $S_i$ contiene una parola del codice. In questo caso il codice non è UD.
 2. Si arriva ad avere un $S_i$ vuoto. In questo caso il codice è UD.
+3. Uno degli $S_i$ è esattamente un set già visto in un'iterazione precedente $S_j$ con $j<i$. In questo caso il codice è UD.
 
 > Esempio<br>
 $S_1=\{A, E, C, ABB, CED, BBEC\}$<br><br>
@@ -138,6 +139,40 @@ Fase B:<br>
 $\nexists$<br>
 Dunque $S_4=\{C\}$<br>
 L'algoritmo termina perché $S_4$ contiene $C$, che è una parola del codice. Dunque il codice non è UD.
+
+Un [Codice Python](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/src/SardinasPatterson.py) per questo algoritmo è il seguente
+```python
+def SardinasPatterson(C: set, show=False):
+    S = C
+    Ss = []
+    while (len(S) != 0):
+        nextS = set()
+        # Caso A
+        for i in C:
+            for j in S:
+                if len(i) < len(j) and j[:len(i)] == i:
+                    nextS.add(j[len(i):])
+        # Caso B
+        for i in S:
+            for j in C:
+                if len(i) < len(j) and j[:len(i)] == i:
+                    nextS.add(j[len(i):])
+        # Stampo a video il nuovo set
+        if show:
+            print(nextS)
+        # Controllo se una parola del nuovo set è in C
+        for i in nextS:
+            if i in C:
+                return False
+        # Controllo se il nuovo set è già stato visto
+        if nextS in Ss:
+            return True
+        else:
+            Ss.append(nextS)
+        S = nextS.copy()
+    return True
+```
+
 
 ### Esercizio
 Determinare se il codice $\{A, BCA, DE, CBC, AABC, C\}$ è univocamente decodificabile.<br>
