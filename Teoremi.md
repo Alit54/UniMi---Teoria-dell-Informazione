@@ -4,6 +4,9 @@
 Indice dei Teoremi e Dimostrazioni
 - [Codice Istantaneo $\implies$ Codice Univocamente Decodificabile]()
 - [Disuguaglianza di Kraft]()
+- [Information Inequality $[D_d(X||Y)\ge0]$]()
+- [$H_d(X)\le\log_dm$]()
+- [$\Bbb{E}(l_c)\ge H_d(X)$]()
 
 ### <font color=red>Un codice istantaneo è univocamente decodificabile?</font>
 Vogliamo dimostrare che
@@ -56,3 +59,71 @@ Sempre per costruzione, partiamo dal vettore $l = (2, 1, 3, 3)$<br>
 Controlliamo la sommatoria per vedere se rispettiamo le ipotesi della disuguaglianza. <br>
 $\displaystyle\sum_{i=1}^md^{-l_i} = \frac{1}{2^2} + \frac{1}{2^1} + \frac{1}{2^3} + \frac{1}{2^3} = \frac14 + \frac12 + \frac18 + \frac18 = 1\le 1$<br>
 Possiamo costruire un albero di codifica in modo tale che il codice che rappresenta sia istantaneo (Ad esempio quello usato per la prima parte della dimostrazione). Dato che si riesce a costruirlo, $\exists c$ codice istantaneo. $\square$
+
+### Information Inequality
+#### Ipotesi
+$X, Y$ due variabili aleatorie definite sul dominio $S$<br>
+$d>1$
+#### Tesi
+$D_d(X||Y)\ge0$
+#### Dimostrazione
+$D_d(X||Y)$<br>
+$=\displaystyle\sum_{s\in S}p_X(s)\log_d\frac{p_X(s)}{p_Y(s)}\qquad$ Per definizione di Entropia Relativa<br>
+$=\displaystyle\sum_{s\in S}p_X(s)*\log_de*\ln\frac{p_X(s)}{p_Y(s)}\qquad$ Cambio di base del logaritmo<br>
+$=\displaystyle\log_d e\sum_{s\in S}p_X(s)\ln\frac{p_X(s)}{p_Y(s)}$<br>
+$\ge\displaystyle\frac1{\ln d}\sum_{s\in S}p_X(s)\Bigg(1-\frac{p_Y(s)}{p_X(s)}\Bigg)\qquad$ perché $\displaystyle 1-\frac1x \le \ln x\quad\forall x$ e $d>1$<br>
+$=\displaystyle\frac1{\ln d}\sum_{s\in S}\bigg(p_X(s)-p_Y(s)\bigg)$<br>
+$=\displaystyle\frac1{\ln d}\Bigg(\sum_{s\in S}p_X(s)-\sum_{s\in S}p_Y(s)\Bigg)$<br>
+$=\displaystyle\frac1{\ln d}(1-1)=0$<br>
+
+### Enunciato: $H_d(X)\le\log_dm\quad\forall d>1$
+#### Ipotesi
+Sia $X$ una variabile aleatoria<br>
+#### Tesi
+$H_d(X)\le\log_dm\quad\forall d>1$<br>
+$H_d(X)=\log_dm\iff X$ ha una distribuzione uniforme.
+#### Dimostrazione
+Vogliamo dimostrare che $H_d(X)-\log_dm\le0$<br>
+$H_d(X)-\log_dm=$<br>
+$\displaystyle=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\log_dm\qquad$ Per definizione di Entropia<br>
+$\displaystyle=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\log_dm\sum_{i=1}^mp_i\qquad$ perché $\displaystyle\sum_{i=1}^mp_i=1$<br>
+$\displaystyle=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\sum_{i=1}^mp_i\log_dm\qquad$<br>
+$\displaystyle=\sum_{i=1}^mp_i\bigg(\log_d\frac1{p_i}-\log_dm\bigg)\qquad$<br>
+$\displaystyle=\sum_{i=1}^mp_i\bigg(\log_d\frac1{p_im}\bigg)\qquad$<br>
+$\displaystyle=\sum_{i=1}^mp_i\bigg(\log_de*\ln\frac1{p_im}\bigg)\qquad$ Cambio di base del logaritmo<br>
+$\displaystyle=\sum_{i=1}^mp_i\bigg(\frac1{\ln d}*\ln\frac1{p_im}\bigg)\qquad$<br>
+$\displaystyle=\frac1{\ln d}\sum_{i=1}^mp_i\bigg(\ln\frac1{p_im}\bigg)\qquad$<br>
+$\displaystyle\le\frac1{\ln d}\sum_{i=1}^mp_i\bigg(\frac1{p_im}-1\bigg)\qquad$ $\ln x\le x-1\quad\forall x$ e perché $d>1$<br>
+$\displaystyle=\frac1{\ln d}\sum_{i=1}^m\bigg(\frac1{m}-p_i\bigg)\qquad$<br>
+$\displaystyle=\frac1{\ln d}\sum_{i=1}^m\bigg(\frac1{m}-p_i\bigg)\qquad$<br>
+$\displaystyle=\frac1{\ln d}\Bigg(\sum_{i=1}^m\frac1{m}-\sum_{i=1}^mp_i\Bigg)\qquad$<br>
+$\displaystyle=\frac1{\ln d}(1-1)=0$
+
+### Teorema $\Bbb{E}(l_c)\ge H_d(X)$
+#### Ipotesi
+$c:\Bbb{X}\to D^+$ codice istantaneo $d$-ario per una sorgente $<\Bbb{X}, P>$
+#### Tesi
+$\Bbb{E}(l_c)\ge H_d(X)$
+#### Dimostrazione
+Sia $Y: \Bbb{X}\to\R$ una variabile aleatoria con funzione di probabilità $\displaystyle q(x)=\frac{d^{-l_c(x)}}{\displaystyle\sum_{x'\in X}d^{-l_c(x')}}$<br>
+Vogliamo dimostrare che $\Bbb{E}(l_c)-H_d(X)\ge0$<br>
+$\Bbb{E}(l_c)-H_d(X)$<br>
+$\displaystyle=\sum_{x\in X}p(x)l_c(x)-\sum_{x\in X}p(x)\log_d\frac1{p(x)}$<br>
+$\displaystyle=\sum_{x\in X}p(x)\Bigg(l_c(x)-\log_d\frac1{p(x)}\Bigg)$<br>
+$\displaystyle=\sum_{x\in X}p(x)\Bigg(\log_dd^{l_c(x)}-\log_d\frac1{p(x)}\Bigg)$<br>
+$\displaystyle=\sum_{x\in X}p(x)\Bigg(\log_d\frac1{d^{-l_c(x)}}+\log_dp(x)\Bigg)$<br>
+$\displaystyle=\sum_{x\in X}p(x)\log_d\frac{p(x)}{d^{-l_c(x)}}$<br>
+$\displaystyle=\sum_{x\in X}p(x)\log_d\Bigg(\frac{p(x)}{d^{-l_c(x)}}\frac{\displaystyle\sum_{x'\in X}d^{-l_c(x)}}{\displaystyle\sum_{x'\in X}d^{-l_c(x)}}\Bigg)$<br>
+$\displaystyle=\sum_{x\in X}p(x)*\Bigg[\log_d\Bigg(p(x)\frac{\displaystyle\sum_{x'\in X}d^{-l_c(x)}}{d^{-l_c(x)}}\Bigg)-\log_d\Bigg(\sum_{x'\in X}d^{-l_c(x)}\Bigg)\Bigg]$<br>
+Dividiamo la sommatoria in due punti da studiare separatamente:<br>
+1. $\displaystyle\sum_{x\in X'}p(x)\log_d\Bigg(p(x)\frac{\sum_{x'\in X}d^{-l_c(x)}}{d^{-l_c(x)}}\Bigg)$<br>
+$\displaystyle\sum_{x\in X}p(x)\log_d\Bigg(\frac{p(x)}{q(x)}\Bigg)$<br>
+$D_d(X||Y)\ge0$<br>
+<br>
+
+2. $\displaystyle\sum_{x\in X}p(x)\log_d\bigg(\sum_{x'\in X}d^{-l_c(x')}\bigg)$<br>
+$\displaystyle=\log_d\bigg(\sum_{x'\in X}d^{-l_c(x')}\bigg)\sum_{x\in X}p(x)$<br>
+$\displaystyle=\log_d\bigg(\sum_{x'\in X}d^{-l_c(x')}\bigg)$<br>
+$\displaystyle\le\log_d1=0$
+
+Di conseguenza, unendo i due punti, abbiamo qualcosa di positivo a cui viene sottratto qualcosa di negativo. $(1)-(2)\ge0$
