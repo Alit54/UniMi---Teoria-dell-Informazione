@@ -2,11 +2,13 @@
 
 
 Indice dei Teoremi e Dimostrazioni
-- [Codice Istantaneo $\implies$ Codice Univocamente Decodificabile]()
-- [Disuguaglianza di Kraft]()
-- [Information Inequality $[D_d(X||Y)\ge0]$]()
-- [$H_d(X)\le\log_dm$]()
-- [$\Bbb{E}(l_c)\ge H_d(X)$]()
+- [Codice Istantaneo $\implies$ Codice Univocamente Decodificabile](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L12)
+- [Disuguaglianza di Kraft](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L32)
+- [Information Inequality $[D_d(X||Y)\ge0]$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L64)
+- [$H_d(X)\le\log_dm$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L80)
+- [$\Bbb{E}(l_c)\ge H_d(X)$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L103)
+- [$\Bbb{E}(l_c)< H_d(X)+1$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L132)
+- [Primo Teorema di Shannon](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md#L142)
 
 ### <font color=red>Un codice istantaneo è univocamente decodificabile?</font>
 Vogliamo dimostrare che
@@ -127,3 +129,25 @@ $\displaystyle=\log_d\bigg(\sum_{x'\in X}d^{-l_c(x')}\bigg)$<br>
 $\displaystyle\le\log_d1=0$
 
 Di conseguenza, unendo i due punti, abbiamo qualcosa di positivo a cui viene sottratto qualcosa di negativo. $(1)-(2)\ge0$
+
+### Upper Bound del Valore Atteso
+#### Ipotesi
+Data una sorgente $<\Bbb{X},\Bbb P>$ e la variabile aleatoria $X:\Bbb X\to\R$ <br>
+Dato $c$ codice di Shannon (quindi istantaneo) con lunghezza delle codifiche $l_i=l_c(x_i)\quad\forall i=1,\dots,m$ tali che $\displaystyle l_i=\lceil\log_d{\frac1{p_i}}\rceil$ 
+#### Tesi
+$$\Bbb E(l_c)<H_d(X)+1$$
+#### Dimostrazione
+$\Bbb E(l_c)=\displaystyle\sum_{i=1}^mp_il_i = \sum_{i=1}^mpi\lceil\log_d\frac1{p_i}\rceil < \sum_{i=1}^mp_i(\log_d\frac1{p_i}+1)=\sum_{i=1}^mp_i\log_d\frac1{p_i}+\sum_{i=1}^mp_i=H_d(X)+1$
+
+### Primo Teorema di Shannon
+#### Ipotesi
+Sia $C_n:\Bbb{X}^n\to D^+$ la codifica di un codice a blocchi di Shannon $d-$ ario per la sorgente $<\Bbb{X},\Bbb{P}>$ tale che $l_{C_n}(x_1,\dots,x_n)=\displaystyle\lceil\log_d\frac1{\Bbb{P}_n(x_1,\dots,x_n)}\rceil$
+#### Tesi
+$$\displaystyle\lim_{n\to\infin}\frac1n\Bbb{E}(l_{C_n})=H_d(X)$$
+#### Dimostrazione
+Da precedenti dimostrazioni, sappiamo che $H_d(X_1,\dots,X_n)\le\Bbb E(l_{C_n})<H_d(X_1,\dots,X_n)+1$<br>
+Inoltre, sappiamo che $H_d(X_1,\dots,X_n)=nH_d(X)$<br>
+Unendo le due cose, si ha che $nH_d(X)\le\Bbb{E}(l_{C_n})<nH_d(X)+1$<br>
+Per ottenere la tesi, si divide tutta la disequazione per $n$:<br>
+$H_d(X)\le\displaystyle\frac1n\Bbb{E}(l_{C_n})<H_d(X)+\frac1n$<br>
+Ponendo il $\displaystyle\lim_{n\to\infin}$, si ha che $\displaystyle\frac1n\Bbb{E}(l_{C_n})$ è compreso tra $H_d(X)$ e $H_d(X)+$ un infinitesimo, dunque $$\displaystyle\lim_{n\to\infin}\frac1n\Bbb{E}(l_{C_n})=H_d(X)$$

@@ -10,6 +10,7 @@ Indice delle definizioni
     - [Codici di Shannon]()
 - [Entropia]()
     - [Entropia Relativa]()
+    - [Entropia Congiunta]()
 - [Radice Primitiva]()
 - [Sorgente]()
 
@@ -67,6 +68,14 @@ Chiamiamo <font color=red>Entropia</font> la funzione $$H_d(X)=\displaystyle\sum
 ### Entropia Relativa
 L'entropia relativa è una misura di distanza (non simmetrica!) tra due variabili aleatorie $X$ e $Y$ entrambe definite sul dominio $S$ ma con due funzioni di probabilità diverse, che chiamiamo $p_X$ e $p_Y$.<br>
 $$D_d(X||Y) = \displaystyle\sum_{s\in S}p_X(s)\log_d\frac{p_X(s)}{p_Y(s)}$$
+
+### Entropia Congiunta
+Supponiamo di avere una sorgente $<\Bbb{X},\Bbb P>$, dalla quale estraiamo una tupla $(x_1,\dots,x_n)$ che vogliamo codificare usando la funzione $C_n:\Bbb X^n\to D^+$.<br>
+Si ricorda che Shannon, per semplificare i calcoli, assume che i simboli di un messaggio siano indipendenti tra loro e, dunque, che $p(x_1,\dots,x_n)=\displaystyle\prod_{i=1}^np(x_i)=\Bbb{P}_n(x_1,\dots,x_n)$<br>
+Definiamo una nuova sorgente $<\Bbb{X}^n,\Bbb{P}_n>$ e ne calcoliamo l'entropia. Per farlo, supponiamo di avere $n$ variabili aleatorie $X_1,\dots,X_n$, tutte indipendenti e identicamente distribuite, che estraggono dalla stessa sorgente.<br>
+
+
+$$H_d(X_1,\dots,X_n)=nH_d(X)$$
 
 ### Radice Primitiva
 In un campo, un elemento si dice <font color=red>Radice Primitiva</font> se quel numero elevato per tutti gli elementi del campo genera tutti gli elementi del campo, eccetto lo $0$.
