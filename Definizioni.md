@@ -11,6 +11,6 @@ Indice delle definizioni
     - [Codici di Huffman](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez06.pdf)
 - [Entropia](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez04.pdf)
     - [Entropia Relativa](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez04.pdf)
-    - [Entropia Congiunta](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez04.pdf)
+    - [Entropia Congiunta](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez05.pdf)
 - [Radice Primitiva](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez01.pdf)
 - [Sorgente](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez02.pdf)
