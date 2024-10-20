@@ -174,7 +174,6 @@ Calcoliamo $\Bbb{E}(l_c)$
 $
 \begin{aligned}
 \Bbb{E}(l_c) &=\displaystyle\sum_{x\in X}l_c(x)p(x)\\
-&=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)\\
 &=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)-l_{c'}(z)p'(z)+l_c(u)p(u)+l_c(v)p(v)\\
 &=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)-l_{c'}(z)p'(z)+\big(l_{c'}(z)+1\big)p(u)+\big(l_{c'}(z)+1\big)p(v)\\
 &=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)-l_{c'}(z)p'(z)+\big(l_{c'}(z)+1\big)\big(p(u)+p(v)\big)\\
@@ -228,7 +227,7 @@ $
 \end{aligned}
 $
 Grazie al punto $1$, sappiamo che $p(r) \ge p(u)$ e $p(s) \ge p(v)$
-Grazie al punto $5$, sappiamo che $l_{c_2}(u)\ge l_{c_2}(r)$ e $l_{c_2}(v)\ge l_{c_2}(s)$
+Grazie al punto $5$, sappiamo che $l_{c_2}(u)\le l_{c_2}(r)$ e $l_{c_2}(v)\le l_{c_2}(s)$
 Dunque il risultato è negativo e
 $$
 \begin{equation}
