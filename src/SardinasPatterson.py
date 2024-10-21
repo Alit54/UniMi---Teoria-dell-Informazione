@@ -1,5 +1,5 @@
 # Determina se il codice è univocamente decodificabile
-def SardinasPatterson(C: set, show=False):
+def SardinasPatterson(C: set, show=False) -> bool:
     S = C
     Ss = []
     while (len(S) != 0):
