@@ -2,12 +2,16 @@ def Huffman(X: list[str], P: list[float], d: int = 2) -> list:
     # Algoritmo che trova il codice istantaneo che minimizza il valore atteso delle lunghezze di codifica
     if len(X) != len(P):
         raise Exception('X and P must have the same lenght')
+    
+    # Inseriamo i Dummies
+    nDummies = (1-len(X))%(d-1)
+
     sorgente = [(x, p) for x, p in zip(X, P)]
-    counter = 0
+    for _ in range(nDummies):
+        sorgente.append(('Dummy', 0))
 
     # Iteriamo finché la sorgente ha al massimo d simboli
     while len(sorgente) > d:
-        counter += 1
         # Si ordinano le probabilità
         sorgente = sorted(sorgente, key = lambda x:x[1], reverse=True)
         new_sorgente = []
@@ -29,28 +33,21 @@ def Huffman(X: list[str], P: list[float], d: int = 2) -> list:
         codifica.append((simbolo[0], str(i)))
 
     # Risrotoloiamo le codifiche
-    while len(codifica) < len(X):
+    while len(codifica) < len(X) + nDummies:
         for i, simbolo in enumerate(codifica):
             if type(simbolo[0]) == list:
                 for j, minisimbolo in enumerate(simbolo[0]):
                     codifica.append((minisimbolo, simbolo[1]+str(j)))
                 codifica.remove(simbolo)
+
+    # Togliamo i Dummies
+    for simbolo, codice in codifica:
+        if simbolo == 'Dummy':
+            codifica.remove((simbolo, codice))
     return codifica
     
 
 if __name__ == '__main__':
-    X = list()
-    X.append('s1')
-    X.append('s2')
-    X.append('s3')
-    X.append('s4')
-    X.append('s5')
-    X.append('s6')
-    P = list()
-    P.append(0.05)
-    P.append(0.45)
-    P.append(0.12)
-    P.append(0.09)
-    P.append(0.16)
-    P.append(0.13)
+    X = [f"a{i}" for i in range(1,13)]
+    P = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05]
     print(Huffman(X, P, d=2))
