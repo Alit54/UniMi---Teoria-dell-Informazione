@@ -10,3 +10,4 @@ Indice dei Teoremi e Dimostrazioni
 - [$\Bbb{E}(l_c)< H_d(X)+1$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez05.pdf)
 - [Primo Teorema di Shannon](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez05.pdf)
 - [Teorema di Huffman](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez06.pdf)
+- [Teorema di Kraft-McMillan](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez07.pdf)
