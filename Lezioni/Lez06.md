@@ -39,7 +39,7 @@ L'algoritmo di Huffman ci permette di trovare il codice istantaneo che minimizza
 Cioè vogliamo trovare il codice tale che $\begin{cases}\displaystyle\min_{l_1,\dots,l_n}\sum_{i=1}^mp_il_i\\\displaystyle\sum_{i=1}^md^{-l_1}\le1\end{cases}$
 #### Come funziona l'algoritmo?
 1. Si prendono i simboli della sorgente $\Bbb X$ e si ordinano in base alle probabilità in maniera decrescente.
-2. Si crea un nuovo modello fittizio della sorgente $\Bbb X'$ in cui i $d$ simboli meno probabili sono sostituiti da un unico simbolo $\hat x$ con probabilità pari alla somma delle probabilità dei simboli sostituiti: $p(\hat x) = \displaystyle\sum_{i=m-d+1}^m p(x_i)$
+2. Si crea un nuovo modello fittizio della sorgente $\Bbb X'$ in cui i $d$ simboli meno probabili sono sostituiti da un unico simbolo $\hat x$ con probabilità pari alla somma delle probabilità dei simboli sostituiti: $$p(\hat x) = \displaystyle\sum_{i=m-d+1}^m p(x_i)$$
 3. Si itera fino a che la sorgente ha al massimo $d$ simboli.
 > <font color=#00CC99>Esempio con il codice di inizio lezione</font>
 Abbiamo $\Bbb X_1$ e supponiamo di avere $d=2$:
@@ -200,10 +200,10 @@ Prendiamo due elementi $u,v\in\Bbb X$ tali che $$
 \begin{equation}
 p(u)\text{ e }p(v)\text{ siano minime}
 \end{equation}$$ Definiamo una nuova sorgente $<\Bbb{X'},\Bbb{P}'>$ sostituendo i simboli $u, v\in\Bbb{X}$ con un simbolo $z\in\Bbb{X'}$ e con probabilità
-$p'(x)=\begin{cases}
+$$p'(x)=\begin{cases}
 p(x)&x\ne z\\
 p(u)+p(v)&x=z
-\end{cases}$
+\end{cases}$$
 $$
 \begin{equation}
 \text{Il codice }c'\text{ è un codice di Huffman ottimale per la sorgente }\Bbb{X'} 
@@ -211,11 +211,11 @@ $$
 $$ per ipotesi induttiva.
 
 Costruiamo il codice $c$ sulla base di $c'$ in questo modo
-$c(x)=\begin{cases}
+$$c(x)=\begin{cases}
 c'(x)&x\notin\{u,v\}\\
 c'(z)0&x=u\\
 c'(z)1&x=v
-\end{cases}$
+\end{cases}$$
 $$
 \begin{equation}
 c\text{ è un codice di Huffman}
@@ -223,7 +223,7 @@ c\text{ è un codice di Huffman}
 $$ per definizione di codice di Huffman.
 
 Calcoliamo $\Bbb{E}(l_c)$
-$
+$$
 \begin{aligned}
 \Bbb{E}(l_c) &=\displaystyle\sum_{x\in X}l_c(x)p(x)\\
 &=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)-l_{c'}(z)p'(z)+l_c(u)p(u)+l_c(v)p(v)\\
@@ -234,7 +234,7 @@ $
 &=\displaystyle\sum_{x\in X'}l_{c'}(x)p'(x)+p'(z)\\
 &=\Bbb{E}(l_{c'})+p'(z)
 \end{aligned}
-$
+$$
 Dunque
 $$
 \begin{equation}
@@ -258,7 +258,7 @@ $$ Si hanno $3$ casi nell'albero di codifica:
 
 Tutti e 3 i casi sono riconducibili al terzo, quindi possiamo analizzare solo questo caso senza perdere di generalità.
 Costruisco il codice $\tilde{c}_2$ in questo modo
-$
+$$
 \tilde{c}_2(x)=\begin{cases}
 c_2(x)&x\not\in\{r,s,u,v\}\\
 c_2(u)&x=r\\
@@ -266,18 +266,18 @@ c_2(v)&x=s\\
 c_2(r)&x=u\\
 c_2(s)&x=v
 \end{cases}
-$ In poche parole, stiamo invertendo le codifiche tra $u, v, r, s$
+$$ In poche parole, stiamo invertendo le codifiche tra $u, v, r, s$
 Calcoliamo $\Bbb{E}(l_{\tilde{c}_2})-\Bbb{E}(l_{c_2})$
 
-$
+$$
 \begin{aligned}
 \Bbb{E}(l_{\tilde{c}_2})-\Bbb{E}(l_{c_2})&=\displaystyle\sum_{x\in \Bbb X}p(x)l_{\tilde{c}_2}(x)-\sum_{x\in \Bbb X}p(x)l_{c_2}(x)\\
 &=\displaystyle\sum_{x\in \Bbb X}p(x)\Big(l_{\tilde{c}_2}(x)-l_{c_2}(x)\Big)\\
 &=\displaystyle\sum_{x\in\{u,v,r,s\}}p(x)\Big(l_{\tilde{c}_2}(x)-l_{c_2}(x)\Big)\\
-&=p(r)l_{c_2}(u)+p(u)l_{c_2}(r)+p(s)l_{c_2}(v)+p(v)l_{c_2}(s)-p(u)l_{c_2}(u)-p(r)l_{c_2}(r)-p(v)l_{c_2}(v)-p(s)l_{c_2}(s)\\
+&=p(r)l_{c_2}(u)+p(u)l_{c_2}(r)+p(s)l_{c_2}(v)+p(v)l_{c_2}(s)\\&-p(u)l_{c_2}(u)-p(r)l_{c_2}(r)-p(v)l_{c_2}(v)-p(s)l_{c_2}(s)\\
 &=\Big(p(r)-p(u)\Big)\Big(l_{c_2}(u)-l_{c_2}(r)\Big)+\Big(p(s)-p(v)\Big)\Big(l_{c_2}(v)-l_{c_2}(s)\Big)
 \end{aligned}
-$
+$$
 Grazie al punto $1$, sappiamo che $p(r) \ge p(u)$ e $p(s) \ge p(v)$
 Grazie al punto $5$, sappiamo che $l_{c_2}(u)\le l_{c_2}(r)$ e $l_{c_2}(v)\le l_{c_2}(s)$
 Dunque il risultato è negativo e
@@ -287,16 +287,16 @@ $$
 \end{equation}
 $$
 Costruiamo un'ulteriore funzione di codifica $c_{2}'$ per la sorgente $<\Bbb{X}', \Bbb{P}'>$ in questo modo:
-$
+$$
 c_2'(x)=\begin{cases}
 \tilde c_2(x)&x\ne z\\
 \omega&x=z
 \end{cases}
-$
+$$
 con $p'(z)=p(u)+p(v)$
 
 Calcoliamo $\Bbb E(l_{\tilde c_2})$
-$
+$$
 \begin{aligned}
 \Bbb E(l_{\tilde c_2})&=\sum_{x\in \Bbb X}p(x)l_{\tilde c_2}(x)\\
 &=\sum_{x\in \Bbb X\text{\textbackslash}\{z\}}p'(x)l_{c_2'}(x)+p(u)\Big(l_{c_2'}(z)+1\Big)+p(v)\Big(l_{c_2'}(z)+1\Big)\\
@@ -305,7 +305,7 @@ $
 &=\sum_{x\in \Bbb X\text{\textbackslash}\{z\}}p'(x)l_{c_2'}(x)+l_{c_2'}(z)p'(z)+p'(z)\\
 &=\Bbb E(l_{c_2'})+p'(z)\\
 \end{aligned}
-$
+$$
 Quindi
 $$
 \begin{equation}
@@ -316,12 +316,12 @@ $$
 Unendo i pezzi:
 Grazie al punto $3$, sappiamo che $c$ è un codice di Huffman
 Inoltre,
-$
+$$
 \begin{aligned}
 \Bbb{E}(l_c)&=\Bbb{E}(l_{c'})+p'(z)&\text{Per il punto }4\\
 &\le\Bbb{E}(l_{{c_2'}})+p'(z)&\text{Per il punto }2\\
 &=\Bbb E(l_{\tilde c_2})&\text{Per il punto }7\\
 &\le \Bbb{E}(l_{c_2})&\text{Per il punto }6
 \end{aligned}
-$
+$$
 Abbiamo dimostrato che $\Bbb{E}(l_c) \le \Bbb{E}(l_{c_2})$ per qualunque $c_2$ istantaneo e quindi il codice $c$ è ottimo.

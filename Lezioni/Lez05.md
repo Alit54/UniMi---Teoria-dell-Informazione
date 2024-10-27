@@ -14,11 +14,11 @@ Dato $c$ codice di Shannon (quindi istantaneo) con lunghezza delle codifiche $l_
 #### Tesi
 $$\Bbb E(l_c)<H_d(X)+1$$
 #### Dimostrazione
-$\Bbb E(l_c)=\displaystyle\sum_{i=1}^mp_il_i = \sum_{i=1}^mpi\lceil\log_d\frac1{p_i}\rceil < \sum_{i=1}^mp_i(\log_d\frac1{p_i}+1)=\sum_{i=1}^mp_i\log_d\frac1{p_i}+\sum_{i=1}^mp_i=H_d(X)+1$
+$\Bbb E(l_c)=\displaystyle\sum_{i=1}^mp_il_i = \sum_{i=1}^mpi\lceil\log_d\frac1{p_i}\rceil < \sum_{i=1}^mp_i\left(\log_d\frac1{p_i}+1\right)=\sum_{i=1}^mp_i\log_d\frac1{p_i}+\sum_{i=1}^mp_i=H_d(X)+1$
 
 Problema!
 Abbiamo dimostrato che l'errore che commettiamo stimando il valore atteso con l'entropia è compreso tra $0$ e $1$ (Dato che $H_d(X)\le\Bbb E(l_c)<H_d(X)+1$). Tuttavia, questo risultato è relativo alla codifica di ogni singolo simbolo, dunque il problema si moltiplica per il numero di simboli nel messaggio.
-$$l_c(x_1,\dots,x_m)=\displaystyle\sum_{i=1}^ml_c(x_i)=\sum_{i=1}^m\lceil\log_d\frac1{p_i}\rceil$$
+$$l_c(x_1,\dots,x_m)=\displaystyle\sum_{i=1}^ml_c(x_i)=\sum_{i=1}^m\left\lceil\log_d\frac1{p_i}\right\rceil$$
 > <font color = 00cc99>Esempio</font>
 $
 \begin{aligned}
@@ -39,33 +39,33 @@ Si ricorda che Shannon, per semplificare i calcoli, assume che i simboli di un m
 > Premessa utile per il calcolo successivo
 $\displaystyle\log_d\frac1{\Bbb{P}(x_1,\dots,x_n)}=\log_d\frac1{\displaystyle\prod_{i=1}^np(x_i)}=\sum_{i=1}^n-(\log_dp_i)=\sum_{i=1}^n\log_d\frac1{p_i}$
 
-$
+$$
 \begin{aligned}
 H_d(X_1,\dots,X_n)&=\sum_{X_1,\dots,X_n}\Bbb P(x_1,\dots,x_n)\log_d\frac1{\Bbb{P}(x_1,\dots,x_n)}\\
-&=\sum_{X_1}\sum_{X_2}\dots\sum_{X_n}\Bigg(\prod_{i=1}^np(x_i)\Bigg)*\sum_{i=1}^n\log_d\frac1{p(x_i)}
+&=\sum_{X_1}\sum_{X_2}\dots\sum_{X_n}\left(\prod_{i=1}^np(x_i)\right)*\sum_{i=1}^n\log_d\frac1{p(x_i)}
 \end{aligned}
-$
+$$
 
 Questa formula risulta complicata se pensata al caso generale $n$. Per comprenderla, proviamo a vedere cosa succede nel caso $\boxed{n=2}$
 
-$
+$$
 \begin{aligned}
 H_d(X_1,X_2)&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2p(x_i)\sum_{i=1}^2\log_d\frac1{p(x_i)}\\
-&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2\Big(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\Big)\\
-&=\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\Big(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\Big)\\
-&=\sum_{X_1}\sum_{X_2}\Big(p(x_1)*p(x_2)*\log_d\frac1{p(x_1)}+p(x_1)*p(x_2)\log_d\frac1{p(x_2)}\Big)\\
+&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2\left(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\right)\\
+&=\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\left(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\right)\\
+&=\sum_{X_1}\sum_{X_2}\left(p(x_1)*p(x_2)*\log_d\frac1{p(x_1)}+p(x_1)*p(x_2)\log_d\frac1{p(x_2)}\right)\\
 &=\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\log_d\frac1{p(x_1)}+\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\log_d\frac1{p(x_2)}\\
 &=\sum_{X_2}p(x_2)\sum_{X_1}p(x_1)\log_d\frac1{p(x_1)}+\sum_{X_1}p(x_1)\sum_{X_2}p(x_2)\log_d\frac1{p(x_2)}\\
 &=\sum_{X_1}p(x_1)\log_d\frac1{p(x_1)}+\sum_{X_2}p(x_2)\log_d\frac1{p(x_2)}\\
 &=H_d(X_1)+H_d(X_2)
 \end{aligned}
-$
+$$
 Dunque, in generale: $$H_d(X_1,\dots,X_n)=\displaystyle\sum_{i=1}^nH_d(X_i)$$ ma dato che le varie $X_i$ seguono la stessa distribuzione di probabilità di $X$, vale che
 $$H_d(X_1,\dots,X_n)=\displaystyle\sum_{i=1}^nH_d(X)=nH_d(X)$$
 
 ### Primo Teorema di Shannon
 #### Ipotesi
-Sia $C_n:\Bbb{X}^n\to D^+$ la codifica di un codice a blocchi di Shannon $d-$ ario per la sorgente $<\Bbb{X},\Bbb{P}>$ tale che $l_{C_n}(x_1,\dots,x_n)=\displaystyle\lceil\log_d\frac1{\Bbb{P}_n(x_1,\dots,x_n)}\rceil$
+Sia $C_n:\Bbb{X}^n\to D^+$ la codifica di un codice a blocchi di Shannon $d-$ ario per la sorgente $<\Bbb{X},\Bbb{P}>$ tale che $l_{C_n}(x_1,\dots,x_n)=\displaystyle\left\lceil\log_d\frac1{\Bbb{P}_n(x_1,\dots,x_n)}\right\rceil$
 #### Tesi
 $$\displaystyle\lim_{n\to\infin}\frac1n\Bbb{E}(l_{C_n})=H_d(X)$$
 #### Dimostrazione
@@ -76,28 +76,28 @@ Inoltre, sappiamo che $H_d(X_1,\dots,X_n)=nH_d(X)$
 Unendo le due cose, si ha che $nH_d(X)\le\Bbb{E}(l_{C_n})<nH_d(X)+1$
 
 Per ottenere la tesi, si divide tutta la disequazione per $n$:
-$H_d(X)\le\displaystyle\frac1n\Bbb{E}(l_{C_n})<H_d(X)+\frac1n$
+$$H_d(X)\le\displaystyle\frac1n\Bbb{E}(l_{C_n})<H_d(X)+\frac1n$$
 
 Ponendo il $\displaystyle\lim_{n\to\infin}$, si ha che $\displaystyle\frac1n\Bbb{E}(l_{C_n})$ è compreso tra $H_d(X)$ e $H_d(X)+$ un infinitesimo, dunque $$\displaystyle\lim_{n\to\infin}\frac1n\Bbb{E}(l_{C_n})=H_d(X)$$
 
 ### Teorema: Upper Bound Valore Atteso di sorgente campionata
 #### Ipotesi
-Data una sorgente $<\Bbb{X},\Bbb{P}>$ e $c:\Bbb{X}\to D^+$ un codice di Shannon tale che $l_c(x)=\displaystyle\lceil\log_d\frac1{q(x)}\rceil$, dove $q$ è una distribuzione di probabilità stimata sulla sorgente $\Bbb{X}$ e associata alla variabile aleatoria $Y:\Bbb{X}\to\R$
+Data una sorgente $<\Bbb{X},\Bbb{P}>$ e $c:\Bbb{X}\to D^+$ un codice di Shannon tale che $l_c(x)=\displaystyle\left\lceil\log_d\frac1{q(x)}\right\rceil$, dove $q$ è una distribuzione di probabilità stimata sulla sorgente $\Bbb{X}$ e associata alla variabile aleatoria $Y:\Bbb{X}\to\R$
 #### Tesi
 $$\Bbb{E}(l_c)<H_d(X)+1+D_d(X||Y)$$
 #### Dimostrazione
 
-$
+$$
 \begin{aligned}
-\Bbb{E}(l_c)&=\sum_{x\in X}p(x)\lceil\log_d\frac1{q(x)}\rceil\\
-&<\sum_{x\in X}p(x)\Big(\log_d\frac1{q(x)}+1\Big)\\
+\Bbb{E}(l_c)&=\sum_{x\in X}p(x)\left\lceil\log_d\frac1{q(x)}\right\rceil\\
+&<\sum_{x\in X}p(x)\left(\log_d\frac1{q(x)}+1\right)\\
 &=\sum_{x\in X}p(x)\log_d\frac1{q(x)}+\sum_{x\in X}p(x)\\
 &=\sum_{x\in X}p(x)\log_d\frac1{q(x)}+1\\
-&=\sum_{x\in X}p(x)\log_d\Big(\frac1{q(x)}\frac{p(x)}{p(x)}\Big)+1\\
+&=\sum_{x\in X}p(x)\log_d\left(\frac1{q(x)}\frac{p(x)}{p(x)}\right)+1\\
 &=\sum_{x\in X}p(x)\log_d\frac{p(x)}{q(x)}+\sum_{x\in }p(x)\log_d\frac1{p(x)}+1\\
 &=D_d(X||Y)+H_d(X)+1
 \end{aligned}
-$
+$$
 
 ### <font color=00cc99>Esercizi</font>
 1. Ignorando la condizione di terminazione dell'algoritmo di [Sardinas-Patterson](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/src/SardinasPatterson.py) dell'esercizio della scorsa lezione, provare ad andare avanti finché non si raggiunge un'ulteriore condizione di terminazione.
@@ -106,7 +106,7 @@ $S_6=\{D\}$
 $S_7=\{\}$
 <br>
 
-2. Costruire un codice istantaneo per una sorgente con le seguenti probabilità $\Bbb{P}\displaystyle=\Bigg\{\frac13,\frac14,\frac16,\frac18,\frac19, x\Bigg\}$
+2. Costruire un codice istantaneo per una sorgente con le seguenti probabilità $\Bbb{P}\displaystyle=\left\{\frac13,\frac14,\frac16,\frac18,\frac19, x\right\}$
 $x = \displaystyle 1-\frac{24-18-12-9-8}{72} = \frac1{72}$<br>
 Dunque le lunghezze sono:
 $

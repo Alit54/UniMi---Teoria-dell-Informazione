@@ -15,14 +15,14 @@ Chiamiamo <font color=red>Entropia</font> la funzione $$H_d(X)=\displaystyle\sum
 ### Cambio di base dell'entropia
 Avendo $a, b$ e $p$, ricordiamo che $\log_b p=\log_b a*\log_a p$
 Quindi, per cambiare base all'entropia, possiamo:
-$
+$$
 \begin{aligned}
 H_b(X)&=\displaystyle\sum_{i=1}^m p_i\log_b\frac1{p_i}\\
 &=\sum_{i=1}^mp_i*\log_b a*\log_a\frac1{p_i}\\
 &=\log_ba*\sum_{i=1}^mp_i\log_a\frac1{p_i}\\
 &=\log_ba*H_a(X)
 \end{aligned}
-$
+$$
 Dunque, $$H_b(X)=\log_ba*H_a(X)$$
 
 ### Rappresentazione sul Piano Cartesiano
@@ -41,26 +41,26 @@ Questa informazione ci sarà utile per le dimostrazioni successive.
 #### Ipotesi
 Sia $X$ una variabile aleatoria
 #### Tesi
-$H_d(X)\le\log_dm\quad\forall d>1$
-$H_d(X)=\log_dm\iff X$ ha una distribuzione uniforme.
+$$H_d(X)\le\log_dm\quad\forall d>1$$
+$$H_d(X)=\log_dm\iff X \text{ ha una distribuzione uniforme}$$
 #### Dimostrazione
 Vogliamo dimostrare che $H_d(X)-\log_dm\le0$
 
-$\begin{aligned}
+$$\begin{aligned}
 H_d(X)-\log_dm&=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\log_dm &\text{ Per definizione di Entropia}\\
 &=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\log_dm\sum_{i=1}^mp_i &\text{perché }\sum_{i=1}^mp_i=1\\
 &=\sum_{i=1}^mp_i\log_d\frac1{p_i}-\sum_{i=1}^mp_i\log_dm\\
-&=\sum_{i=1}^mp_i\bigg(\log_d\frac1{p_i}-\log_dm\bigg)\\
-&=\sum_{i=1}^mp_i\bigg(\log_d\frac1{p_im}\bigg)\\
-&=\sum_{i=1}^mp_i\bigg(\log_de*\ln\frac1{p_im}\bigg)&\text{ Cambio di base del logaritmo}\\
-&=\sum_{i=1}^mp_i\bigg(\frac1{\ln d}*\ln\frac1{p_im}\bigg)\\
-&=\frac1{\ln d}\sum_{i=1}^mp_i\bigg(\ln\frac1{p_im}\bigg)\\
-&\le\frac1{\ln d}\sum_{i=1}^mp_i\bigg(\frac1{p_im}-1\bigg)&\ln x\le x-1\quad\forall x\\
-&=\frac1{\ln d}\sum_{i=1}^m\bigg(\frac1{m}-p_i\bigg)\\
-&=\frac1{\ln d}\Bigg(\sum_{i=1}^m\frac1{m}-\sum_{i=1}^mp_i\Bigg)\\
+&=\sum_{i=1}^mp_i\left(\log_d\frac1{p_i}-\log_dm\right)\\
+&=\sum_{i=1}^mp_i\left(\log_d\frac1{p_im}\right)\\
+&=\sum_{i=1}^mp_i\left(\log_de*\ln\frac1{p_im}\right)&\text{ Cambio di base del logaritmo}\\
+&=\sum_{i=1}^mp_i\left(\frac1{\ln d}*\ln\frac1{p_im}\right)\\
+&=\frac1{\ln d}\sum_{i=1}^mp_i\left(\ln\frac1{p_im}\right)\\
+&\le\frac1{\ln d}\sum_{i=1}^mp_i\left(\frac1{p_im}-1\right)&\ln x\le x-1\quad\forall x\\
+&=\frac1{\ln d}\sum_{i=1}^m\left(\frac1{m}-p_i\right)\\
+&=\frac1{\ln d}\left(\sum_{i=1}^m\frac1{m}-\sum_{i=1}^mp_i\right)\\
 &=\frac1{\ln d}(1-1)\\
 &=0
-\end{aligned}$
+\end{aligned}$$
 
 ### Entropia Relativa
 L'entropia relativa è una misura di distanza (non simmetrica!) tra due variabili aleatorie $X$ e $Y$ entrambe definite sul dominio $S$ ma con due funzioni di probabilità diverse, che chiamiamo $p_X$ e $p_Y$.
@@ -72,58 +72,58 @@ $$D_d(X||Y) = \displaystyle\sum_{s\in S}p_X(s)\log_d\frac{p_X(s)}{p_Y(s)}$$
 $X, Y$ due variabili aleatorie definite sul dominio $S$
 $d>1$
 #### Tesi
-$D_d(X||Y)\ge0$
+$$D_d(X||Y)\ge0$$
 #### Dimostrazione
-$
+$$
 \begin{aligned}
 D_d(X||Y)&=\sum_{s\in S}p_X(s)\log_d\frac{p_X(s)}{p_Y(s)}&\text{ Per definizione di Entropia Relativa}\\
 &=\sum_{s\in S}p_X(s)*\log_de*\ln\frac{p_X(s)}{p_Y(s)}&\text{ Cambio di base del logaritmo}\\
 &=\log_d e\sum_{s\in S}p_X(s)\ln\frac{p_X(s)}{p_Y(s)}\\
-&\ge\frac1{\ln d}\sum_{s\in S}p_X(s)\Bigg(1-\frac{p_Y(s)}{p_X(s)}\Bigg)&\text{ perché }1-\frac1x \le \ln x\quad\forall x\\
-&=\frac1{\ln d}\sum_{s\in S}\bigg(p_X(s)-p_Y(s)\bigg)\\
-&=\frac1{\ln d}\Bigg(\sum_{s\in S}p_X(s)-\sum_{s\in S}p_Y(s)\Bigg)\\
+&\ge\frac1{\ln d}\sum_{s\in S}p_X(s)\left(1-\frac{p_Y(s)}{p_X(s)}\right)&\text{ perché }1-\frac1x \le \ln x\quad\forall x\\
+&=\frac1{\ln d}\sum_{s\in S}\left(p_X(s)-p_Y(s)\right)\\
+&=\frac1{\ln d}\left(\sum_{s\in S}p_X(s)-\sum_{s\in S}p_Y(s)\right)\\
 &=\frac1{\ln d}(1-1)\\
 &=0
 \end{aligned}
-$
+$$
 ### Teorema $\Bbb{E}(l_c)\ge H_d(X)$
 #### Ipotesi
 $c:\Bbb{X}\to D^+$ codice istantaneo $d$-ario per una sorgente $<\Bbb{X}, \Bbb P>$
 #### Tesi
-$\Bbb{E}(l_c)\ge H_d(X)$
+$$\Bbb{E}(l_c)\ge H_d(X)$$
 #### Dimostrazione
 Sia $Y: \Bbb{X}\to\R$ una variabile aleatoria con funzione di probabilità $\displaystyle q(x)=\frac{d^{-l_c(x)}}{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}$
 Vogliamo dimostrare che $\Bbb{E}(l_c)-H_d(X)\ge0$
 
-$
+$$
 \begin{aligned}
 \Bbb{E}(l_c)-H_d(X)&=\sum_{x\in \Bbb X}p(x)l_c(x)-\sum_{x\in \Bbb X}p(x)\log_d\frac1{p(x)}\\
-&=\sum_{x\in \Bbb X}p(x)\Bigg(l_c(x)-\log_d\frac1{p(x)}\Bigg)\\
-&=\sum_{x\in \Bbb X}p(x)\Bigg(\log_dd^{l_c(x)}-\log_d\frac1{p(x)}\Bigg)\\
-&=\sum_{x\in \Bbb X}p(x)\Bigg(\log_d\frac1{d^{-l_c(x)}}+\log_dp(x)\Bigg)\\
+&=\sum_{x\in \Bbb X}p(x)\left(l_c(x)-\log_d\frac1{p(x)}\right)\\
+&=\sum_{x\in \Bbb X}p(x)\left(\log_dd^{l_c(x)}-\log_d\frac1{p(x)}\right)\\
+&=\sum_{x\in \Bbb X}p(x)\left(\log_d\frac1{d^{-l_c(x)}}+\log_dp(x)\right)\\
 &=\sum_{x\in \Bbb X}p(x)\log_d\frac{p(x)}{d^{-l_c(x)}}\\
-&=\sum_{x\in \Bbb X}p(x)\log_d\Bigg(\frac{p(x)}{d^{-l_c(x)}}\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}\Bigg)\\
-&=\sum_{x\in \Bbb X}p(x)*\Bigg[\log_d\Bigg(p(x)\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{d^{-l_c(x)}}\Bigg)-\log_d\Bigg(\sum_{x'\in \Bbb X}d^{-l_c(x')}\Bigg)\Bigg]
+&=\sum_{x\in \Bbb X}p(x)\log_d\left(\frac{p(x)}{d^{-l_c(x)}}\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}\right)\\
+&=\sum_{x\in \Bbb X}p(x)*\left[\log_d\left(p(x)\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{d^{-l_c(x)}}\right)-\log_d\left(\sum_{x'\in \Bbb X}d^{-l_c(x')}\right)\right]
 \end{aligned}
-$
+$$
 
 Dividiamo la sommatoria in due punti da studiare separatamente:
 
-- 1 <br>$\begin{aligned}
-&\sum_{x\in \Bbb X}p(x)\log_d\Bigg(p(x)\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{d^{-l_c(x)}}\Bigg)\\
-=&\sum_{x\in \Bbb X}p(x)\log_d\Bigg(\frac{p(x)}{q(x)}\Bigg)\\
+- 1 <br>$$\begin{aligned}
+&\sum_{x\in \Bbb X}p(x)\log_d\left(p(x)\frac{\displaystyle\sum_{x'\in \Bbb X}d^{-l_c(x')}}{d^{-l_c(x)}}\right)\\
+=&\sum_{x\in \Bbb X}p(x)\log_d\left(\frac{p(x)}{q(x)}\right)\\
 =&D_d(X||Y)\\
 \ge&\ 0
 \end{aligned}
-$<br><br>
+$$<br><br>
 
-- 2 <br>$\begin{aligned}
-&\sum_{x\in \Bbb X}p(x)\log_d\bigg(\sum_{x'\in \Bbb X}d^{-l_c(x')}\bigg)\\
-=&\log_d\bigg(\sum_{x'\in \Bbb X}d^{-l_c(x')}\bigg)\sum_{x\in \Bbb X}p(x)\\
-=&\log_d\bigg(\sum_{x'\in \Bbb X}d^{-l_c(x')}\bigg)\\
+- 2 <br>$$\begin{aligned}
+&\sum_{x\in \Bbb X}p(x)\log_d\left(\sum_{x'\in \Bbb X}d^{-l_c(x')}\right)\\
+=&\log_d\left(\sum_{x'\in \Bbb X}d^{-l_c(x')}\right)\sum_{x\in \Bbb X}p(x)\\
+=&\log_d\left(\sum_{x'\in \Bbb X}d^{-l_c(x')}\right)\\
 \le&\log_d1\\
 =&\ 0
-\end{aligned}$
+\end{aligned}$$
 
 Di conseguenza, unendo i due punti, abbiamo qualcosa di positivo a cui viene sottratto qualcosa di negativo. $(1)-(2)\ge0$
 

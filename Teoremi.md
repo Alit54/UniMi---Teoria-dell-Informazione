@@ -11,3 +11,6 @@ Indice dei Teoremi e Dimostrazioni
 - [Primo Teorema di Shannon](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez05.pdf)
 - [Teorema di Huffman](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez06.pdf)
 - [Teorema di Kraft-McMillan](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez07.pdf)
+- [$H(X,Y)=H(X)+H(Y|X)$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez08.pdf)
+- [$I(X,Y)=H(X)-H(X|Y)$](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez08.pdf)
+- [Data Processing Inequality](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez08.pdf)
