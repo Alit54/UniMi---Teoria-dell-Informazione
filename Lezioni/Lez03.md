@@ -68,7 +68,7 @@ $$\displaystyle\sum_{i=1}^md^{l_{max}-l_i}=\sum_{i=1}^m|A_i|\le d^{l_{max}}$$ Pr
 $\boxed{\impliedby}$
 Sempre per costruzione, partiamo dal vettore $l = (2, 1, 3, 3)$
 Controlliamo la sommatoria per vedere se rispettiamo le ipotesi della disuguaglianza.
-$\displaystyle\sum_{i=1}^md^{-l_i} = \frac{1}{2^2} + \frac{1}{2^1} + \frac{1}{2^3} + \frac{1}{2^3} = \frac14 + \frac12 + \frac18 + \frac18 = 1\le 1$
+$$\displaystyle\sum_{i=1}^md^{-l_i} = \frac{1}{2^2} + \frac{1}{2^1} + \frac{1}{2^3} + \frac{1}{2^3} = \frac14 + \frac12 + \frac18 + \frac18 = 1\le 1$$
 Possiamo costruire un albero di codifica in modo tale che il codice che rappresenta sia istantaneo (Ad esempio quello usato per la prima parte della dimostrazione). Dato che si riesce a costruirlo, $\exists c$ codice istantaneo. $\square$
 
 ### Codici di Shannon
@@ -88,11 +88,11 @@ Dato che vogliamo che questa proprietà valga per la sommatoria, possiamo farla 
 $d^{-l_i} \le p_i\quad\forall i=1,\dots,m$ e dunque
 $$l_i \ge \log_d{\frac1{p_i}}$$ Scegliamo cioè le lunghezze della codifica in base alla probabilità con cui un elemento del messaggio è presente nella sorgente.
 Dato che voglio minimizzare il valore atteso, sceglierò il più piccolo $l_i$ possibile, ovvero
-$$l_i = \lceil\log_d\frac1{p_i}\rceil$$ Se $l_i = \log_d\displaystyle\frac1{p_i}\quad\forall i$, cioè senza approssimare, allora si ha che:
+$$l_i = \left\lceil\log_d\frac1{p_i}\right\rceil$$ Se $l_i = \log_d\displaystyle\frac1{p_i}\quad\forall i$, cioè senza approssimare, allora si ha che:
 $$\Bbb{E}(l_c) = \displaystyle\sum_{i=1}^ml_ip_i=\sum_{i=1}^mp_i*\log_d{\frac1{p_i}} = H$$
 chiamiamo questo valore <font color=red>Entropia</font>.
 ### <font color=00cc99>Esercizi</font>
-1. Costruiamo un codice per la sorgente $X=\{x_1, x_2, x_3, x_4\}$ con $d=2$ e $\Bbb P=\Bigg\{\displaystyle\frac12,\frac14,\frac18,\frac18\Bigg\}$
+1. Costruiamo un codice per la sorgente $X=\{x_1, x_2, x_3, x_4\}$ con $d=2$ e $\Bbb P=\left\{\displaystyle\frac12,\frac14,\frac18,\frac18\right\}$
 Seguendo la disuguaglianza di Kraft, scegliamo:
 $
 l_1=\lceil\log_22\rceil=1\\
@@ -111,7 +111,7 @@ $
 2. Supponiamo di avere una sorgente di due simboli tali per cui $p(x_1)=0.1$ e $p(x_2) = 0.9$. Se dovessimo seguire Shannon, avremmo:
 $
 l_1 = \lceil\log_210\rceil=4\\
-l_2 = \lceil\log_2\displaystyle\frac1{0.9}\rceil=1
+l_2 = \left\lceil\log_2\displaystyle\frac1{0.9}\right\rceil=1
 $
 Dunque avremmo $c(x_1) = 0000$ e $c(x_2) = 1$ che non è ottimale.
 <br>
@@ -133,12 +133,12 @@ Costruendo l'albero di codifica, si nota che tutti i sottoalberi generati dagli 
 ![Albero di Codifica](/img/kraft/Esercizio2.PNG)
 <br>
 6. $S = \{s_1, s_2, s_3, s_4, s_5, s_6\}, d=2$
-$\Bbb P=\Bigg\{\displaystyle\frac1{15}, \frac13, \frac16, \frac19, \frac15, \frac1{29}\Bigg\}$
+$\Bbb P=\left\{\displaystyle\frac1{15}, \frac13, \frac16, \frac19, \frac15, \frac1{29}\right\}$
 Trovare il codice di Shannon-Fano.
 Questo problema è risolvibile, ma è privo di senso. La somma delle probabilità all'interno di $\Bbb P$ non è uguale a $1$.
 <br>
 7. $d=2$
-$\Bbb P=\Bigg\{\displaystyle\frac1{12}, \frac4{12}, \frac2{10}, \frac13, \frac1{72}, x\Bigg\}$
+$\Bbb P=\left\{\displaystyle\frac1{12}, \frac4{12}, \frac2{10}, \frac13, \frac1{72}, x\right\}$
 Trovare il codice di Shannon-Fano.
 Innanzitutto, bisogna trovare $x$. Rispettando il secondo assioma di Kolmogorov, la somma delle probabilità deve essere $1$. Dunque $x = \displaystyle1-\frac1{12} - \frac4{12} - \frac2{10} - \frac13 - \frac1{72} = \frac{13}{360}$
 Avendo tutte le probabilità, usiamo il metodo di Shannon per calcolare le lunghezze.
@@ -148,7 +148,7 @@ l_2 = \lceil\log_23\rceil=2\\
 l_3 = \lceil\log_25\rceil=3\\
 l_4 = \lceil\log_23\rceil=2\\
 l_5 = \lceil\log_272\rceil=7\\
-l_6 = \lceil\log_2\displaystyle\frac{360}{13}\rceil=5
+l_6 = \left\lceil\log_2\displaystyle\frac{360}{13}\right\rceil=5
 $<br>
 Verifichiamo che può esistere un codice istantaneo (ovvero, che rispetta la disuguaglianza di Kraft).
 $\displaystyle\frac1{2^4} + \frac1{2^2} + \frac1{2^3} + \frac1{2^2} + \frac1{2^7} + \frac1{2^5} = \frac1{16}+ \frac14 + \frac18 + \frac14 + \frac1{128} + \frac1{32} = \frac{93}{128}\le 1$<br>

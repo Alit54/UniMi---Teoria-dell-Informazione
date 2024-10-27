@@ -32,21 +32,21 @@ Siano $l_1,\dots,l_m$ le lunghezze di un codice $d-$ario Univocamente Decodifica
 $\boxed{\impliedby}$
 Per la [disuguaglianza di Kraft](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/pdf/Lez03.pdf), $\displaystyle\sum_{i=1}^md^{-l_i}\le1\implies\exist c$ istantaneo con lunghezze $l_1,\dots,l_m$. Ma un codice istantaneo è sempre univocamente decodificabile.
 $\boxed{\implies}$
-Considero un codice $c$ univocamente decodificabile e calcolo $\displaystyle\Bigg(\sum_{x\in\Bbb X}d^{-l_c(x)}\Bigg)^n$
+Considero un codice $c$ univocamente decodificabile e calcolo $\displaystyle\left(\sum_{x\in\Bbb X}d^{-l_c(x)}\right)^n$
 > Se $\boxed{n=2}$<br>
-$\displaystyle\Bigg(\sum_{i=1}^ma_i\Bigg)^2 = \sum_{i=1}^ma_i*\sum_{j=1}^ma_j = \sum_{i=1}^m\sum_{j=1}^ma_ia_j$
+$\displaystyle\left(\sum_{i=1}^ma_i\right)^2 = \sum_{i=1}^ma_i*\sum_{j=1}^ma_j = \sum_{i=1}^m\sum_{j=1}^ma_ia_j$
 
 Nel caso generale,
 $$
 \begin{aligned}
 \tag{1}
-\Bigg(\sum_{x\in\Bbb X}d^{-l_c(x)}\Bigg)^n&=\sum_{x_1\in\Bbb X}\dots\sum_{x_n\in\Bbb X} d^{-l_c(x_1)}\dots d^{-l_c(x_n)}\\
+\left(\sum_{x\in\Bbb X}d^{-l_c(x)}\right)^n&=\sum_{x_1\in\Bbb X}\dots\sum_{x_n\in\Bbb X} d^{-l_c(x_1)}\dots d^{-l_c(x_n)}\\
 &=\sum_{x_1\in\Bbb X}\dots\sum_{x_n\in\Bbb X} d^{-\displaystyle\sum_{i=1}^nl_c(x_i)}\\
 &=\sum_{(x_1,\dots,x_n)\in\Bbb X^n}d^{-l_{C_n}(x_1,\dots,x_n)}&\text{Passiamo alla sorgente }<\Bbb X^n, \Bbb P_n>
 \end{aligned}
 $$
 Analizzando $l_{C_n}$, scopriamo che:
-$n\le l_{C_n}(x_1,\dots,x_n)$ perché se ad ogni $x_i$ associo un solo simbolo nella codifica, abbiamo $\displaystyle\sum_{i=1}^n1 =n$\\
+$n\le l_{C_n}(x_1,\dots,x_n)$ perché se ad ogni $x_i$ associo un solo simbolo nella codifica, abbiamo $\displaystyle\sum_{i=1}^n1 =n$
 $l_{C_n}(x_1,\dots,x_n)\le n*l_{max}$ perché se ad ogni $x_i$ associo la lunghezza massima della codifica, abbiamo $\displaystyle\sum_{i=1}^nl_{max} =n*l_{max}$
 Quindi $$n\le l_{C_n}(x_1,\dots,x_n)\le n*l_{max}$$
 
@@ -65,7 +65,7 @@ Riprendendo il punto $1$, si ha che
 $$
 \begin{aligned}
 \tag{1.1}
-\Bigg(\sum_{x\in\Bbb X}d^{-l_c(x)}\Bigg)^n&=\sum_{(x_1,\dots,x_n)\in\Bbb X^n}d^{-l_{C_n}(x_1,\dots,x_n)}\\
+\left(\sum_{x\in\Bbb X}d^{-l_c(x)}\right)^n&=\sum_{(x_1,\dots,x_n)\in\Bbb X^n}d^{-l_{C_n}(x_1,\dots,x_n)}\\
 &=\sum_{k=1}^{nl_{max}}\sum_{(x_1,\dots,x_n)\in\Bbb X^n_k}d^{-l_{C_n}(x_1,\dots,x_n)}\\
 &=\sum_{k=1}^{nl_{max}}\sum_{(x_1,\dots,x_n)\in\Bbb X^n_k}d^{-k}\\
 &=\sum_{k=1}^{nl_{max}}|\Bbb X^n_k|d^{-k}
@@ -75,7 +75,7 @@ Dato che $C_n$ è una funzione non singolare (e quindi iniettiva), la cardinalit
 $$
 \begin{aligned}
 \tag{1.2}
-\Bigg(\sum_{x\in\Bbb X}d^{-l_c(x)}\Bigg)^n&=\sum_{k=n}^{nl_{max}}|\Bbb X^n_k|d^{-k}\\
+\left(\sum_{x\in\Bbb X}d^{-l_c(x)}\right)^n&=\sum_{k=n}^{nl_{max}}|\Bbb X^n_k|d^{-k}\\
 &\le\sum_{k=1}^{nl_{max}}|D^k|d^{-k}\\
 &=\sum_{k=1}^{nl_{max}}d^kd^{-k}\\
 &=\sum_{k=1}^{nl_{max}}1\\
