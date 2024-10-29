@@ -9,5 +9,6 @@ Gli appunti presi per l'esame di Teoria dell'Informazione sono presenti nei segu
 - [18/10/24 Lezione 06: Codici di Huffman](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez06.pdf)
 - [22/10/24 Lezione 07: Disuguaglianza di Kraft-McMillan](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez07.pdf)
 - [25/10/24 Lezione 08: Derivati dell'Entropia](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez08.pdf)
+- [29/10/24 Lezione 08: Derivati dell'Entropia II](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/pdf/Lez09.pdf)
 
 Sono anche disponibili gli elenchi delle [Definizioni](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Definizioni.md) e dei [Teoremi](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/develop/Teoremi.md) del corso, presi direttamente dagli appunti delle lezioni.<br>
