@@ -164,7 +164,7 @@ $\nexists$<br>
 Dunque $S_4=\{C\}$
 L'algoritmo termina perché $S_4$ contiene $C$, che è una parola del codice. Dunque il codice non è UD.
 
-Un [Codice Python](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/src/SardinasPatterson.py) per questo algoritmo è il seguente
+Un [Codice Python](/src/SardinasPatterson.py) per questo algoritmo è il seguente
 ```python
 def SardinasPatterson(C: set, show=False):
     S = C

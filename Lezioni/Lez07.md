@@ -30,7 +30,7 @@ $$
 Siano $l_1,\dots,l_m$ le lunghezze di un codice $d-$ario Univocamente Decodificabile per una sorgente $<\Bbb X, \Bbb P>$ di $m$ simboli $\iff\displaystyle\sum_{i=1}^md^{-l_i}\le1$
 #### Dimostrazione
 $\boxed{\impliedby}$
-Per la [disuguaglianza di Kraft](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/pdf/Lez03.pdf), $\displaystyle\sum_{i=1}^md^{-l_i}\le1\implies\exist c$ istantaneo con lunghezze $l_1,\dots,l_m$. Ma un codice istantaneo è sempre univocamente decodificabile.
+Per la [disuguaglianza di Kraft](/pdf/Lez03.pdf), $\displaystyle\sum_{i=1}^md^{-l_i}\le1\implies\exist c$ istantaneo con lunghezze $l_1,\dots,l_m$. Ma un codice istantaneo è sempre univocamente decodificabile.
 $\boxed{\implies}$
 Considero un codice $c$ univocamente decodificabile e calcolo $\displaystyle\left(\sum_{x\in\Bbb X}d^{-l_c(x)}\right)^n$
 > Se $\boxed{n=2}$<br>

@@ -100,7 +100,7 @@ $$
 $$
 
 ### <font color=00cc99>Esercizi</font>
-1. Ignorando la condizione di terminazione dell'algoritmo di [Sardinas-Patterson](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/src/SardinasPatterson.py) dell'esercizio della scorsa lezione, provare ad andare avanti finché non si raggiunge un'ulteriore condizione di terminazione.
+1. Ignorando la condizione di terminazione dell'algoritmo di [Sardinas-Patterson](/src/SardinasPatterson.py) dell'esercizio della scorsa lezione, provare ad andare avanti finché non si raggiunge un'ulteriore condizione di terminazione.
 $S_5=\{ED\}$
 $S_6=\{D\}$
 $S_7=\{\}$
