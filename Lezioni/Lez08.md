@@ -9,7 +9,7 @@
 ## Lezione 8: Derivati dell'Entropia
 <font color=orange> Nota</font>: in questa lezione (e molto probabilmente anche fino alla fine del corso), considereremo $\boxed{d=2}$. Dunque, si eviterà di indicare tale dato nelle definizioni delle entropie e dei logaritmi. In ogni caso, tutte le dimostrazioni presenti in questa lezione sono valide $\forall d>1$.
 ### Significato pratico dell'Entropia
-Nella [Lezione 4](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/pdf/Lez04.pdf) abbiamo parlato dell'<font color=red>Entropia</font> come indice di eterogeneità, ma cosa rappresenta l'entropia?
+Nella [Lezione 4](/pdf/Lez04.pdf) abbiamo parlato dell'<font color=red>Entropia</font> come indice di eterogeneità, ma cosa rappresenta l'entropia?
 Nella <code>Teoria dell'Informazione</code>, L'<font color=#ff00ff>Entropia</font> $H(X)$ rappresenta la quantità di informazione da mandare per comunicare l'evento $X$ e, dunque, il numero medio di simboli da spedire sul canale.
 Parlando dell'<font color=#ff00ff>Entropia Congiunta</font>, $H(X,Y)$ rappresenta la quantità di informazione da mandare sul canale per comunicare sia $X$ sia $Y$.
 Infine, l'<font color = #ff00ff>Entropia Condizionata</font> $H(Y|X)$ rappresenta la quantità di informazione da mandare per comunicare $Y$ sapendo che ho già mandato $X$ in precedenza.

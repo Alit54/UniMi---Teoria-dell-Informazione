@@ -112,7 +112,7 @@ c(s_2) = 1
 $
 Calcolando $\Bbb E(l_c) = 4*0.05+1*0.45+3*0.12+4*0.09+3*0.16+3*0.13 = \boxed{2.24}$
 
-Un'implementazione Python del [Codice di Huffman](https://github.com/Alit54/UniMi---Teoria-dell-Informazione/blob/main/src/Huffman.py) è la seguente
+Un'implementazione Python del [Codice di Huffman](/src/Huffman.py) è la seguente
 
 ```python
 def Huffman(X: list[str], P: list[float], d: int = 2) -> list:
