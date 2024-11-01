@@ -65,3 +65,22 @@ H_2(R|S)&=0.2\left(0.2\log_2\frac1{0.2}+0.2\log_2\frac1{0.2}+0.3\log_2\frac1{0.3
 \end{aligned}$
 
 Trovare $H_2(S|R)$
+Partiamo dalla definizione di $\displaystyle H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(y_i)p(x_i|y_j)\log\frac1{p(x_i|y_j)}$
+Sapendo che $p(y_j)p(x_i|y_j)=p(x_i,y_j)=p(x_i)p(y_j|x_i)$, possiamo sostituire ottenendo $$H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(x_i)p(y_j|x_i)\log\frac{p(y_j)}{p(x_i)p(y_j|x_i)}$$
+Grazie alla definizione di probabilità marginale, sappiamo che $\displaystyle p(y_j) = \sum_{i=1}^4p(x_i, y_j) = \sum_{i=1}^4p(x_i)p(y_j|x_i)$ e quindi sostituiamo
+$$H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(x_i)p(y_j|x_i)\log\left(\frac{\displaystyle\sum_{k=1}^4p(x_k)p(y_j|x_k)}{p(x_i)p(y_j|x_i)}\right)$$
+
+Implementiamo [questa formula](/src/entropia.py) in Python
+```python
+def H_SR(C: list[list[float]], P: list[float]) -> float:
+    if len(C) != len(P):
+        raise Exception('Lenght are not correct')
+    entropy = 0
+    for x in range(len(C)):
+        for y in range(len(C[x])):
+            p_y = sum([C[xx][y]*P[xx] for xx in range(len(C))])
+            val = M[x][y]*P[x]
+            entropy += p_xy*math.log(p_y/p_xy,2)
+    return entropy
+```
+e il codice restituisce come valore $H(S|R)=\boxed{1.627}$
