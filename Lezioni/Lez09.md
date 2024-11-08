@@ -48,7 +48,7 @@ $$M=\begin{bmatrix}
 0.2&0.2&0.3&0.2&0.1\\
 0.2&0.5&0.1&0.1&0.1\\
 0.6&0.1&0.1&0.1&0.1\\
-0.3&0.1&0.1&0.1&0.1
+0.3&0.1&0.1&0.1&0.4
 \end{bmatrix}$$
 dove $i=\{1,\dots,4\}$ è l'indice delle righe di $M$ e $j=\{1,\dots,5\}$ è l'indice delle colonne.
 
@@ -60,12 +60,12 @@ $\begin{aligned}
 H_2(R|S)&=0.2\left(0.2\log_2\frac1{0.2}+0.2\log_2\frac1{0.2}+0.3\log_2\frac1{0.3}+0.2\log_2\frac1{0.2}+0.1\log_2\frac1{0.1}\right)\\
 &+0.3\left(0.2\log_2\frac1{0.2}+0.5\log_2\frac1{0.5}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}\right)\\
 &+0.1\left(0.6\log_2\frac1{0.6}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}\right)\\
-&+0.4\left(0.3\log_2\frac1{0.3}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}\right)\\
+&+0.4\left(0.3\log_2\frac1{0.3}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.1\log_2\frac1{0.1}+0.4\log_2\frac1{0.4}\right)\\
 &=\boxed{2.033}
 \end{aligned}$
 
 Trovare $H_2(S|R)$
-Partiamo dalla definizione di $\displaystyle H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(y_i)p(x_i|y_j)\log\frac1{p(x_i|y_j)}$
+Partiamo dalla definizione di $\displaystyle H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(y_j)p(x_i|y_j)\log\frac1{p(x_i|y_j)}$
 Sapendo che $p(y_j)p(x_i|y_j)=p(x_i,y_j)=p(x_i)p(y_j|x_i)$, possiamo sostituire ottenendo $$H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(x_i)p(y_j|x_i)\log\frac{p(y_j)}{p(x_i)p(y_j|x_i)}$$
 Grazie alla definizione di probabilità marginale, sappiamo che $\displaystyle p(y_j) = \sum_{i=1}^4p(x_i, y_j) = \sum_{i=1}^4p(x_i)p(y_j|x_i)$ e quindi sostituiamo
 $$H(S|R)=\sum_{j=1}^5\sum_{i=1}^4p(x_i)p(y_j|x_i)\log\left(\frac{\displaystyle\sum_{k=1}^4p(x_k)p(y_j|x_k)}{p(x_i)p(y_j|x_i)}\right)$$
