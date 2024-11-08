@@ -97,14 +97,14 @@ Siano $X,Y,Z$ variabili aleatorie con codominio finito per la sorgente $<\Bbb X,
 $$I(X,Y)\ge I(X,Z)$$
 #### Dimostrazione
 $$\begin{aligned}
-I(X,Y,Z)&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(x,y,z)}{p(x)p(y,z)}\\
-&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(y|x,z)p(x,z)}{p(x)p(y,z)}\\
-&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(y|x,z)p(x,z)}{p(x)p(y|z)p(z)}\\
-&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\left[\log\frac{p(x,z)}{p(x)p(z)}+\log\frac{p(y|x,z)}{p(y|z)}\right]\\
-&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(x,z)}{p(x)p(z)}+\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(y|x,z)}{p(y|z)}\\
-&=\sum_{x\in\Bbb X}\sum_{z\in\Bbb X} p(x,z)\log\frac{p(x,z)}{p(x)p(z)}+\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(y|x,z)}{p(y|z)}\\
-&=I(X,Z)+\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\left(\frac{p(y|x,z)}{p(y|z)}\frac{p(x|z)}{p(x|z)}\right)\\
-&=I(X,Z)+\sum_{x\in\Bbb X}\sum_{y\in\Bbb X}\sum_{z\in\Bbb X} p(x,y,z)\log\frac{p(x,y|z)}{p(y|z)p(x|z)}\\
+I(X,Y,Z)&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(x,y,z)}{p(x)p(y,z)}\\
+&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(y|x,z)p(x,z)}{p(x)p(y,z)}\\
+&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(y|x,z)p(x,z)}{p(x)p(y|z)p(z)}\\
+&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\left[\log\frac{p(x,z)}{p(x)p(z)}+\log\frac{p(y|x,z)}{p(y|z)}\right]\\
+&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(x,z)}{p(x)p(z)}+\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(y|x,z)}{p(y|z)}\\
+&=\sum_{x\in\Bbb X}\sum_{z\in\Bbb Z} p(x,z)\log\frac{p(x,z)}{p(x)p(z)}+\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(y|x,z)}{p(y|z)}\\
+&=I(X,Z)+\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\left(\frac{p(y|x,z)}{p(y|z)}\frac{p(x|z)}{p(x|z)}\right)\\
+&=I(X,Z)+\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(x,y|z)}{p(y|z)p(x|z)}\\
 &=I(X,Z)+I(X,Y|Z)
 \end{aligned}$$
 Dunque,$$\tag{1}I(X,Y,Z)=I(X,Z)=I(X,Y|Z)$$
