@@ -2,6 +2,9 @@ Indice delle definizioni
 
 - [Albero di Codifica](/pdf/Lez03.pdf)
 - [Campo di Galois](/pdf/Lez01.pdf)
+- [Canale](/pdf/Lez10.pdf)
+    - [Canale Discreto Senza Memoria](/pdf/Lez10.pdf)
+    - [Capacità del Canale](/pdf/Lez10.pdf)
 - [Codice](/pdf/Lez02.pdf)
     - [Codice Non Singolare](/pdf/Lez02.pdf)
     - [Codice Univocamente Decodificabile](/pdf/Lez02.pdf)
