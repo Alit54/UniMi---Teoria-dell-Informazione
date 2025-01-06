@@ -13,6 +13,7 @@ Gli appunti presi per l'esame di Teoria dell'Informazione sono presenti nei segu
 - [08/11/24 Lezione 10: Canale](/pdf/Lez10.pdf)
 - [15/11/24 Lezione 11: Esercizi sul Canale](/pdf/Lez11.pdf)
 - 
-- [15/11/24 Lezione 13: Parità](/pdf/Lez13.pdf)
+- [05/12/24 Lezione 13: Parità](/pdf/Lez13.pdf)
+- [12/12/24 Lezione 14: Codici Lineari](/pdf/Lez14.pdf)
 
 Sono anche disponibili gli elenchi delle [Definizioni](/Definizioni.md) e dei [Teoremi](/Teoremi.md) del corso, presi direttamente dagli appunti delle lezioni.<br>
