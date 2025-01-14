@@ -12,7 +12,7 @@ Gli appunti presi per l'esame di Teoria dell'Informazione sono presenti nei segu
 - [29/10/24 Lezione 09: Derivati dell'Entropia II](/pdf/Lez09.pdf)
 - [08/11/24 Lezione 10: Canale](/pdf/Lez10.pdf)
 - [15/11/24 Lezione 11: Esercizi sul Canale](/pdf/Lez11.pdf)
-- [22/11/24 Lezione 12: Secondo Teorema di Shannon]()
+- [22/11/24 Lezione 12: Secondo Teorema di Shannon](/pdf/Lez12.pdf)
 - [03/12/24 Lezione 13: Parità](/pdf/Lez13.pdf)
 - [13/12/24 Lezione 14: Codici Lineari](/pdf/Lez14.pdf)
 - [12/12/24 Lezione 14: Ultime Definizioni e Teoremi](/pdf/Lez15.pdf)

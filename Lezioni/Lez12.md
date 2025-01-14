@@ -30,8 +30,6 @@ $x^n: M\to\mathbb X^n$
 - $g$ è la funzione di decodifica che prende l'output ricevuto dal canale e lo mappa in uno dei possibili messaggi in $M$
 $g:\mathbb Y^n\to M$
 
-[Codice di tipo $(M, n)$](/img/...)
-
 A causa del rumore sul canale, è possibile che la decodifica del messaggio porti ad un errore, dunque introduciamo $\lambda_i$ che indica la probabilità che $g$ produca un messaggio $m_i$ diverso da quello originariamente spedito.
 $$\lambda_i=\mathbb P(g(y_i)\ne m_i|X^n=x^n(m_i))$$
 
@@ -112,7 +110,6 @@ $$\tag{2}\exist n_0:\quad\forall n>n_0\quad \left|A_e^{(n)}\right| \ge (1-\epsil
 In altre parole, l'insieme cresce esponenzialmente con la lunghezza del messaggio $n$, ma lo fa in modo controllato dall'esponente: ogni parte rimane una piccola frazione del totale delle sequenze possibili.
 Anche se l'insieme tipico $A_e^{(n)}$, con l'aumentare di $n$, contiene la maggior parte delle sequenze possibili, non ha bisogno di includerle tutte. Infatti, dopo un certo numero di simboli $n_0$, l'insieme tipico diventa abbastanza grande da contenere quasi tutta la probabilità totale, ignorando quelle sequenze che quasi certamente non si verificheranno mai.
 
-[Insieme Tipico](/img/...)
 Quando si trasmette il messaggio $x^n$ con un canale rumoroso, verrà mappato con messaggi appartenenti all'insieme tipico e che avranno poca distanza (a causa del rumore) dal messaggio originale, mentre si ignorano le sequenze troppo distanti da $x^n$.
 
 $\star$, per comprendere quali messaggi $y_n$ appartengono all'insieme si considera una dipendenza dal simbolo che è stato spedito: $$|A_e^{n}|\approx 2^nH(Y|X)$$
