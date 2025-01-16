@@ -57,7 +57,7 @@ Data la premessa precedente, si ha che se $k<n$ oppure se $k>n*l_{max}$ allora $
 Gli insiemi $\Bbb X^n_k$ sono tali che:
 
 - $\Bbb X^n_i\cap \Bbb X^n_j=\empty\quad\forall i\ne j$
-- $\displaystyle\bigcap_{k=n}^{n*l_{max}}\Bbb X^n_k=\Bbb X^n$
+- $\displaystyle\bigcup_{k=n}^{n*l_{max}}\Bbb X^n_k=\Bbb X^n$
 - $\Bbb X^n_k\subseteq \Bbb X^n$
 ![Partizione](/img/kraft-mcmillan/partizione.PNG)
 
