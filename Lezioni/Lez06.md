@@ -188,7 +188,7 @@ Nella nostra dimostrazione, assumeremo sempre $d=2$ per semplicità nei conti, m
 La dimostrazione è data per induzione, dunque
 
 $\boxed{\text{Caso Base}}$
-$|\Bbb X|\le d$ (nel costro caso, quindi, $|\Bbb X|=2$)
+$|\Bbb X|\le d$ (nel nostro caso, quindi, $|\Bbb X|=2$)
 Abbiamo i simboli $s_1$ e $s_2$ associate alle loro probabilità $p_1$ e $p_2$.
 Indipendentemente dalle probabilità, si può associare ad ogni simbolo una codifica formata da un solo elemento di $D$ senza rendere il codice ambiguo.
 Ad esempio, $c(s_1) = 0$ e $c(s_2) = 1$ oppure viceversa.
