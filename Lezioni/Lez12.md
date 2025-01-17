@@ -8,7 +8,7 @@
 
 ## Lezione 12: Secondo Teorema di Shannon
 
-<font color="orange">Nota:</font> i seguenti appunti sono rielaborazioni degli appunti di Sofia Carelli e Nicolas Lampreda, che ringrazio. Gli appunti potrebbero non essere precisi a causa della mia comprensione sull'argomento.
+<font color="orange">Nota:</font> i seguenti appunti sono rielaborazioni degli appunti di Sofia Zanelli e Nicolas Lampreda, che ringrazio. Gli appunti potrebbero non essere precisi a causa della mia comprensione sull'argomento.
 
 ### Riepilogo delle lezioni precedenti
 Abbiamo visto che calcolare $C=\displaystyle\max_{p(x)}I(X,Y)$ non è scontato e non esiste un processo meccanico da seguire, che invece è dipendente dalle distribuzioni di $X$ e $Y$ e dalle probabilità della matrice di canale.
