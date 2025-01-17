@@ -44,7 +44,7 @@ ovvero la probabilità massima d'errore è maggiore o uguale della probabilità 
 Il <font color="red">tasso di trasmissione</font> di un codice di tipo $(M,n)$ è definito come $$R=\frac{\log_d m}n$$
 In questo corso, consideriamo $d=2$
 
-Il massimo di messaggi che si può spedire usando base $2$ è $2^n$, dunque l'upper bound per $R$ è $$R=\log_2\frac{2^n}n=\frac nn = 1$$
+Il massimo di messaggi che si può spedire usando base $2$ è $2^n$, dunque l'upper bound per $R$ è $$R=\frac{\log_2{2^n}}n=\frac nn = 1$$
 
 $R=1$ rappresenta una situazione idilliaca in cui si spedisce $n$ volte il massimo dei messaggi su un canale privo di rumore.
 Nella realtà, si calcola il <font color="red">tasso di trasmissione raggiungibile</font> che è generalmente minore di $1$.
