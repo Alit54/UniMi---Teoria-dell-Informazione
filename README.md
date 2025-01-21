@@ -15,6 +15,6 @@ Gli appunti presi per l'esame di Teoria dell'Informazione sono presenti nei segu
 - [22/11/24 Lezione 12: Secondo Teorema di Shannon](/pdf/Lez12.pdf)
 - [03/12/24 Lezione 13: Parità](/pdf/Lez13.pdf)
 - [13/12/24 Lezione 14: Codici Lineari](/pdf/Lez14.pdf)
-- [12/12/24 Lezione 14: Ultime Definizioni e Teoremi](/pdf/Lez15.pdf)
+- [12/12/24 Lezione 15: Ultime Definizioni e Teoremi](/pdf/Lez15.pdf)
 
 Sono anche disponibili gli elenchi delle [Definizioni](/Definizioni.md) e dei [Teoremi](/Teoremi.md) del corso, presi direttamente dagli appunti delle lezioni.<br>

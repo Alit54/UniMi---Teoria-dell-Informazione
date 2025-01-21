@@ -8,7 +8,7 @@
 
 ## Lezione 12: Secondo Teorema di Shannon
 
-<font color="orange">Nota:</font> i seguenti appunti sono rielaborazioni degli appunti di Sofia Carelli e Nicolas Lampreda, che ringrazio. Gli appunti potrebbero non essere precisi a causa della mia comprensione sull'argomento.
+<font color="orange">Nota:</font> i seguenti appunti sono rielaborazioni degli appunti di Sofia Zanelli e Nicolas Lampreda, che ringrazio. Gli appunti potrebbero non essere precisi a causa della mia comprensione sull'argomento.
 
 ### Riepilogo delle lezioni precedenti
 Abbiamo visto che calcolare $C=\displaystyle\max_{p(x)}I(X,Y)$ non è scontato e non esiste un processo meccanico da seguire, che invece è dipendente dalle distribuzioni di $X$ e $Y$ e dalle probabilità della matrice di canale.
@@ -44,7 +44,7 @@ ovvero la probabilità massima d'errore è maggiore o uguale della probabilità 
 Il <font color="red">tasso di trasmissione</font> di un codice di tipo $(M,n)$ è definito come $$R=\frac{\log_d m}n$$
 In questo corso, consideriamo $d=2$
 
-Il massimo di messaggi che si può spedire usando base $2$ è $2^n$, dunque l'upper bound per $R$ è $$R=\log_2\frac{2^n}n=\frac nn = 1$$
+Il massimo di messaggi che si può spedire usando base $2$ è $2^n$, dunque l'upper bound per $R$ è $$R=\frac{\log_2{2^n}}n=\frac nn = 1$$
 
 $R=1$ rappresenta una situazione idilliaca in cui si spedisce $n$ volte il massimo dei messaggi su un canale privo di rumore.
 Nella realtà, si calcola il <font color="red">tasso di trasmissione raggiungibile</font> che è generalmente minore di $1$.
