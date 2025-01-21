@@ -293,7 +293,7 @@ c_2'(x)=\begin{cases}
 \omega&x=z
 \end{cases}
 $$
-con $p'(z)=p(u)+p(v)$
+con $p'(z)=p(u)+p(v)$ e con $\omega$ uguale alla codifica di $u$ e $v$ tolto l'ultimo simbolo.
 
 Calcoliamo $\Bbb E(l_{\tilde c_2})$
 $$
