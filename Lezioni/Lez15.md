@@ -9,7 +9,7 @@
 ## Lezione 15: Ultime Definizioni e Teoremi
 
 ### Definizione
-Un codice $C$ rileva $z$ errori se $\forall x\in C$ e $\forall x'\in M_n$ (spazio lineare di dimensione $n$, ovvro tutte le parole del codice più gli errori) con $x\ne x'$ tali che:
+Un codice $C$ rileva $z$ errori se $\forall x\in C$ e $\forall x'\in M_n$ (spazio lineare di dimensione $n$, ovvero tutte le parole del codice più gli errori) con $x\ne x'$ tali che:
 $$0<d(x,x')\le z\quad\forall x'\in C$$
 
 ### Definizione
@@ -17,15 +17,15 @@ Un codice $C$ corregge $t$ errori se $\forall x,y\in C$ con $x\ne y$ e $\forall 
 $$d(x,x')\le t\land d(x',y)>t$$
 
 ### Teorema
-$$P\text{ rileva }z\text{ errori}\iff d(P)\ge z+1$$
+$$C\text{ rileva }z\text{ errori}\iff d(C)\ge z+1$$
 
-$d(P)$ è la distanza di Hamming minima tra due parole di $P$
+$d(C)$ è la distanza di Hamming minima tra due parole di $C$
 
 ### Teorema
-$$P\text{ corregge }t\text{ errori}\iff d(P)\ge 2t+1$$
+$$C\text{ corregge }t\text{ errori}\iff d(C)\ge 2t+1$$
 
 ### Definizione
-$w(P)$ è il peso minimo di una parola del codice esclusa la parola vuota. Nel caso di un codice lineare, questa definizione equivale al numero di $1$ all'interno di una parola.
+$w(C)$ è il peso minimo di una parola del codice esclusa la parola vuota. Nel caso di un codice lineare, questa definizione equivale al numero di $1$ all'interno di una parola.
 
 ### Definizione
 Dato A un campo finito, chiamiamo spazio dei messaggi di ordine $n$ su $A$ lo spazio lineare $M_n=\{x=[x_1,\dots,x_n]|x_j\in A\}$ dove:
@@ -47,7 +47,7 @@ Sia $x\in C$ una parola spedita sul canale e $y\in M_n$ la parola ricevuta.
 Chiamiamo <font color=red>Schema d'errore</font> $e=y-x$
 
 ### Definizione
-La <font color=red>Sindrome</font> s(x) il resto della divisione $\displaystyle\frac{y(x)}{g(x)}$, dove $g(x)$ è il polinomio generatore (definito più avanti in questi appunti)
+La <font color=red>Sindrome</font> s(x) è il resto della divisione $\displaystyle\frac{y(x)}{g(x)}$, dove $g(x)$ è il polinomio generatore (definito più avanti in questi appunti)
 
 ### Definizione
 La <font color=red>Matrice di Parità</font> del codice $C$ è la matrice $H$ dei coefficienti del sistema lineare $H\cdot \begin{bmatrix*}x_1\\\vdots\\ x_k\end{bmatrix*}=\begin{bmatrix*}0\\\vdots\\ 0\end{bmatrix*}$ di dimensione $(n-k)\times n$.
