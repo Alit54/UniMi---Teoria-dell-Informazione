@@ -134,8 +134,8 @@ Questo insieme ha due proprietà:
 - $\displaystyle\lim_{n\to\infin}\mathbb P((x^n\times y^n)\in B_e^{(n)})=1$
 - Se $\mathbb X^n$ ha distribuzione tale per cui $\mathbb P(\mathbb X^n = x^n) = \displaystyle\prod_{i=1}^n p(x_i)$ con $p(x_i)$ probabilità marginale di $X$ e
 se $\mathbb X^n$ ha distribuzione tale per cui $\mathbb P(\mathbb Y^n = y^n) = \displaystyle\prod_{i=1}^n p(y_i)$ con $p(y_i)$ probabilità marginale di $Y$
-Allora
-$$\forall n\ge 1\quad \mathbb P(x^n\times y^n\in B_e^{(n)})\le 2^{-n(I(X,Y)-3\epsilon)}$$
+Allora, considerata una coppia $x^n\times y^n\in B_e^{(n)}$:
+$$\forall n\ge 1\quad \mathbb P(x^n\times y^n)\le 2^{-n(I(X,Y)-3\epsilon)}$$
 
 In poche parole l'insieme $B_e^{(n)}$ contiene tutte le sequenze $(x^n\times y^n)$ tali che:
 - Le sequenze di $\mathbb X^n$ sono tipiche rispetto all'entropia $H(X)$
@@ -153,6 +153,7 @@ Si garantisce che lavorando con l'insieme tipico si abbia una rappresentazione a
 Sia $<\mathbb X, \mathbb Y, \mathbb P(y|x)>$ un canale con capacità $C$.
 #### Tesi
 $\forall R<C\quad\exist k_1,\dots,k_n$ con $k_i=(2^{nR_n})$ tali che:
-$$\lim_{n\to\infin}R_n=R\quad\text{e}\quad\lim_{n\to\infin}\lambda^{(n)}k_n=0$$
+$$\lim_{n\to\infin}R_n=R\quad\text{e}\quad\lim_{n\to\infin}\lambda^{(n)}_{k_n}=0$$
+dove $\lambda^{(n)}_{k_n}$ indica la massima probabilità d'errore del canale usando il codice $k_n$
 
 In altre parole, è possibile scegliere un codice che si avvicina al massimo della capacità del canale (tramite $R$, ovvero avvicinando il codice al massimo valore di $R$). Inoltre, così facendo, si "spalma" l'errore sull'informazione trasmessa, perciò all'aumentare di $n$ si riduce al minimo l'errore trasmesso (ricordando che all'aumentare di $n$ le bolle dell'insieme tipico tendono a non sovrapporsi permettendo una decodifica univoca).
