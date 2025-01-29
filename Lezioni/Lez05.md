@@ -51,7 +51,7 @@ Questa formula risulta complicata se pensata al caso generale $n$. Per comprende
 $$
 \begin{aligned}
 H_d(X_1,X_2)&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2p(x_i)\sum_{i=1}^2\log_d\frac1{p(x_i)}\\
-&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2\left(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\right)\\
+&=\sum_{X_1}\sum_{X_2}\prod_{i=1}^2p(x_i)\left(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\right)\\
 &=\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\left(\log_d\frac1{p(x_1)}+\log_d\frac1{p(x_2)}\right)\\
 &=\sum_{X_1}\sum_{X_2}\left(p(x_1)*p(x_2)*\log_d\frac1{p(x_1)}+p(x_1)*p(x_2)\log_d\frac1{p(x_2)}\right)\\
 &=\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\log_d\frac1{p(x_1)}+\sum_{X_1}\sum_{X_2}p(x_1)*p(x_2)*\log_d\frac1{p(x_2)}\\

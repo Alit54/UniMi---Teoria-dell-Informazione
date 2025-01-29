@@ -58,8 +58,8 @@ Notiamo quindi che se $c$ è non singolare, non è detto $C$ lo sia. Questo rend
 
 Vogliamo che anche $C$ sia non singolare.
 ### Codice Univocamente Decodificabile
-Se $C$ è non singolare, allora $c$ è <font color=red>univocamente decodificabile</font>
-$$C \text{ non singolare}\implies c\text{ univocamente decodificabile}$$
+Se $C$ è non singolare, allora $c$ è <font color=red>univocamente decodificabile</font> e viceversa.
+$$C \text{ non singolare}\iff c\text{ univocamente decodificabile}$$
 
 
 Come si capisce se un codice è univocamente decodificabile? Esiste un algoritmo (Sardinas-Patterson) che ermette di stabilirlo.
@@ -73,7 +73,7 @@ Questo codice è univocamente decodificabile. Tuttavia, se dobbiamo decodificare
 ### Codici Istantanei
 Un codice è <font color=red>istantaneo</font> quando non esiste una parola nell'insieme $D$ dei simboli che è prefisso di un'altra parola.
 Definiamo provvisariamente l'insieme $\Bbb{C}$ come l'insieme delle codifiche della funzione $c$.<br>$\Bbb{C}\subseteq D^+$
-$$\displaystyle\nexists\ x,y\in\Bbb{C},z\in D^+: y=x*z\implies c \text{ è istantaneo}$$
+$$\displaystyle\nexists\ x,y\in\Bbb{C},z\in D^+: y=x*z\iff c \text{ è istantaneo}$$
 dove $x*z$ rappresenta la concatenazione di $x$ e $z$.
 Codici Istantanei $\subset$ Codice Univocamente Decodificabile
 ![I Codici Istantanei sono un sottoinsieme dei Codici Univocamente Decodificabili](/img/sottoinsiemi/Istantanei.jpeg)

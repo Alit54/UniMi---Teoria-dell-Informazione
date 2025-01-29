@@ -27,7 +27,7 @@ l_{max}=\max_{i=1,\dots,m} l_c(x_i)
 $$
 
 ### Teorema di Kraft-McMillan
-Siano $l_1,\dots,l_m$ le lunghezze di un codice $d-$ario Univocamente Decodificabile per una sorgente $<\Bbb X, \Bbb P>$ di $m$ simboli $\iff\displaystyle\sum_{i=1}^md^{-l_i}\le1$
+$l_1,\dots,l_m$ sono le lunghezze di un codice $d-$ario Univocamente Decodificabile per una sorgente $<\Bbb X, \Bbb P>$ di $m$ simboli $\iff\displaystyle\sum_{i=1}^md^{-l_i}\le1$
 #### Dimostrazione
 $\boxed{\impliedby}$
 Per la [disuguaglianza di Kraft](/pdf/Lez03.pdf), $\displaystyle\sum_{i=1}^md^{-l_i}\le1\implies\exist c$ istantaneo con lunghezze $l_1,\dots,l_m$. Ma un codice istantaneo è sempre univocamente decodificabile.
@@ -57,7 +57,7 @@ Data la premessa precedente, si ha che se $k<n$ oppure se $k>n*l_{max}$ allora $
 Gli insiemi $\Bbb X^n_k$ sono tali che:
 
 - $\Bbb X^n_i\cap \Bbb X^n_j=\empty\quad\forall i\ne j$
-- $\displaystyle\bigcap_{k=n}^{n*l_{max}}\Bbb X^n_k=\Bbb X^n$
+- $\displaystyle\bigcup_{k=n}^{n*l_{max}}\Bbb X^n_k=\Bbb X^n$
 - $\Bbb X^n_k\subseteq \Bbb X^n$
 ![Partizione](/img/kraft-mcmillan/partizione.PNG)
 

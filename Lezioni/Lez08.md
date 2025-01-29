@@ -107,7 +107,7 @@ I(X,Y,Z)&=\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{
 &=I(X,Z)+\sum_{x\in\Bbb X}\sum_{y\in\Bbb Y}\sum_{z\in\Bbb Z} p(x,y,z)\log\frac{p(x,y|z)}{p(y|z)p(x|z)}\\
 &=I(X,Z)+I(X,Y|Z)
 \end{aligned}$$
-Dunque,$$\tag{1}I(X,Y,Z)=I(X,Z)=I(X,Y|Z)$$
+Dunque,$$\tag{1}I(X,Y,Z)=I(X,Z)+I(X,Y|Z)$$
 Tuttavia, se al posto di condizionare su $Z$ lo avessimo fatto su $Y$, avremmo ottenuto $$\tag{2}I(X,Y,Z)=I(X,Y)+I(X,Z|Y)$$
 Possiamo eguagliare le equazioni $1$ e $2$, ottenendo
 $$I(X,Z)+I(X,Y|Z)=I(X,Y)+I(X,Z|Y)$$
